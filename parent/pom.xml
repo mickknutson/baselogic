@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
@@ -80,7 +80,7 @@
 
         <!-- Break the fingers of anyone that changes these values -->
         <maven.test.failure.ignore>false</maven.test.failure.ignore>
-		<maven.test.skip>false</maven.test.skip>
+        <maven.test.skip>false</maven.test.skip>
 
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
@@ -100,38 +100,38 @@
         <maven.aspectj.plugin>1.7</maven.aspectj.plugin>-->
 
         <maven.assembly.plugin>2.3</maven.assembly.plugin>
-		<maven.checkstyle.plugin>2.7</maven.checkstyle.plugin>
-		<maven.clean.plugin>2.4.1</maven.clean.plugin>
-		<maven.cloudfoundry.plugin>1.0.0.M1</maven.cloudfoundry.plugin>
-		<maven.cobertura.plugin>2.7</maven.cobertura.plugin>
-		<maven.compiler.plugin>3.3</maven.compiler.plugin>
-		<maven.dependency.plugin>2.4</maven.dependency.plugin>
-		<maven.deploy.plugin>2.7</maven.deploy.plugin>
-		<maven.eclipse.plugin>2.9</maven.eclipse.plugin>
-		<maven.enforcer.plugin>1.0.1</maven.enforcer.plugin>
-		<maven.exec.plugin>1.2.1</maven.exec.plugin>
-		<maven.failsafe.plugin>2.12</maven.failsafe.plugin>
-		<maven.groovy.plugin>1.4</maven.groovy.plugin>
-		<maven.help.plugin>2.1.1</maven.help.plugin>
-		<maven.install.plugin>2.3.1</maven.install.plugin>
-		<maven.jar.plugin>2.4</maven.jar.plugin>
-		<maven.javadoc.plugin>2.10.1</maven.javadoc.plugin>
-		<maven.jetty.plugin>9.2.6.v20141205</maven.jetty.plugin>
-		<maven.jxr.plugin>2.3</maven.jxr.plugin>
-		<maven.project.info.reports.plugin>2.4</maven.project.info.reports.plugin>
-		<maven.release.plugin>2.2.2</maven.release.plugin>
-		<maven.resources.plugin>2.5</maven.resources.plugin>
-		<maven.site.plugin>3.4</maven.site.plugin>
-		<maven.soapui.plugin>4.0.1</maven.soapui.plugin>
-		<maven.sonar.plugin>2.12</maven.sonar.plugin>
-		<maven.source.plugin>2.4</maven.source.plugin>
-		<maven.surefire.plugin>2.18</maven.surefire.plugin>
-		<maven.tomcat.plugin>2.2</maven.tomcat.plugin>
-		<maven.version.range>[2.2.1,3.3.3)</maven.version.range>
-		<maven.versions.plugin>2.1</maven.versions.plugin>
-		<maven.war.plugin>2.2</maven.war.plugin>
+        <maven.checkstyle.plugin>2.7</maven.checkstyle.plugin>
+        <maven.clean.plugin>2.4.1</maven.clean.plugin>
+        <maven.cloudfoundry.plugin>1.0.0.M1</maven.cloudfoundry.plugin>
+        <maven.cobertura.plugin>2.7</maven.cobertura.plugin>
+        <maven.compiler.plugin>3.3</maven.compiler.plugin>
+        <maven.dependency.plugin>2.4</maven.dependency.plugin>
+        <maven.deploy.plugin>2.7</maven.deploy.plugin>
+        <maven.eclipse.plugin>2.9</maven.eclipse.plugin>
+        <maven.enforcer.plugin>1.0.1</maven.enforcer.plugin>
+        <maven.exec.plugin>1.2.1</maven.exec.plugin>
+        <maven.failsafe.plugin>2.12</maven.failsafe.plugin>
+        <maven.groovy.plugin>1.4</maven.groovy.plugin>
+        <maven.help.plugin>2.1.1</maven.help.plugin>
+        <maven.install.plugin>2.3.1</maven.install.plugin>
+        <maven.jar.plugin>2.4</maven.jar.plugin>
+        <maven.javadoc.plugin>2.10.1</maven.javadoc.plugin>
+        <maven.jetty.plugin>9.2.6.v20141205</maven.jetty.plugin>
+        <maven.jxr.plugin>2.3</maven.jxr.plugin>
+        <maven.project.info.reports.plugin>2.4</maven.project.info.reports.plugin>
+        <maven.release.plugin>2.2.2</maven.release.plugin>
+        <maven.resources.plugin>2.5</maven.resources.plugin>
+        <maven.site.plugin>3.4</maven.site.plugin>
+        <maven.soapui.plugin>4.0.1</maven.soapui.plugin>
+        <maven.sonar.plugin>2.12</maven.sonar.plugin>
+        <maven.source.plugin>2.4</maven.source.plugin>
+        <maven.surefire.plugin>2.18</maven.surefire.plugin>
+        <maven.tomcat.plugin>2.2</maven.tomcat.plugin>
+        <maven.version.range>[2.2.1,3.3.3)</maven.version.range>
+        <maven.versions.plugin>2.1</maven.versions.plugin>
+        <maven.war.plugin>2.2</maven.war.plugin>
 
-		<wagon_ssh.version>2.2</wagon_ssh.version>
+        <wagon_ssh.version>2.2</wagon_ssh.version>
 
 
         <!-- NEED TO ALPHABATIZE -->
@@ -371,25 +371,25 @@
 
 
 
-	        <!-- AspectJ -->
-	        <dependency>
-	            <groupId>org.aspectj</groupId>
-	            <artifactId>aspectjrt</artifactId>
-	            <version>${aspectj.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.aspectj</groupId>
-	            <artifactId>aspectjtools</artifactId>
-	            <version>${aspectj.version}</version>
-	        </dependency>
+            <!-- AspectJ -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjtools</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
 
-	        <dependency>
-	            <groupId>cglib</groupId>
-	            <artifactId>cglib</artifactId>
-	            <version>${cglib.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
 
-	        <!-- Common -->
+            <!-- Common -->
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
@@ -403,42 +403,42 @@
             </dependency>
 
             <!-- TODO: Determine when to use 2.x, verse 3.x of commons -->
-	        <dependency>
-	            <groupId>commons-lang</groupId>
-	            <artifactId>commons-lang</artifactId>
-	            <version>${commons_lang.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons_lang.version}</version>
+            </dependency>
 
             <dependency>
-	            <groupId>org.apache.commons</groupId>
-	            <artifactId>commons-lang3</artifactId>
-	            <version>${commons_lang3.version}</version>
-	        </dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons_lang3.version}</version>
+            </dependency>
 
-	        <dependency>
-	            <groupId>commons-io</groupId>
-	            <artifactId>commons-io</artifactId>
-	            <version>${commons_io.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons_io.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
 
-	        <!-- Logging -->
-	        <dependency>
-	            <groupId>org.slf4j</groupId>
-	            <artifactId>slf4j-api</artifactId>
-	            <version>${slf4j.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.slf4j</groupId>
-	            <artifactId>jcl-over-slf4j</artifactId>
-	            <version>${slf4j.version}</version>
-	            <scope>runtime</scope>
-	        </dependency>
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
             <!-- Logging with SLF4J & LogBack -->
             <!-- not sure if these are needed -->
@@ -479,16 +479,16 @@
 
             <!--=== dependencyManagement =======================================-->
 
-	        <dependency>
-	            <groupId>ch.qos.logback</groupId>
-	            <artifactId>logback-classic</artifactId>
-	            <version>${logback.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>ch.qos.logback</groupId>
-	            <artifactId>logback-core</artifactId>
-	            <version>${logback.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -498,18 +498,18 @@
 
 
             <!-- @Inject -->
-	        <dependency>
-	            <groupId>javax.inject</groupId>
-	            <artifactId>javax.inject</artifactId>
-	            <version>${javax.inject.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${javax.inject.version}</version>
+            </dependency>
 
 
-	        <dependency>
-	            <groupId>org.codehaus.groovy</groupId>
-	            <artifactId>groovy-all</artifactId>
-	            <version>${groovy.version}</version>
-	        </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
 
 
             <!-- Servlet -->
@@ -609,115 +609,115 @@
                 <version>${activemq.version}</version>
             </dependency>
 
-	        <!-- Test -->
-	        <dependency>
-	            <groupId>junit</groupId>
-	            <artifactId>junit</artifactId>
-	            <version>${junit.version}</version>
-	            <scope>test</scope>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.hamcrest</groupId>
-	            <artifactId>hamcrest-all</artifactId>
-	            <version>${hamcrest.version}</version>
-	            <scope>test</scope>
-	        </dependency>
+            <!-- Test -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
 
-	        <dependency>
-	            <groupId>org.mockito</groupId>
-	            <artifactId>mockito-all</artifactId>
-	            <version>${mockito.version}</version>
-	            <scope>test</scope>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.powermock</groupId>
-	            <artifactId>powermock-module-junit4</artifactId>
-	            <version>${powermock.version}</version>
-	            <scope>test</scope>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.powermock</groupId>
-	            <artifactId>powermock-api-mockito</artifactId>
-	            <version>${powermock.version}</version>
-	            <scope>test</scope>
-	        </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <!--=== dependencyManagement =======================================-->
 
-	        <!-- EasyB -->
-	        <!--<dependency>
-	            <groupId>org.easyb</groupId>
-	            <artifactId>easyb-core</artifactId>
-	            <version>${easyb.version}</version>
-	            <scope>test</scope>
-	            <exclusions>
-	                <exclusion>
-	                    <groupId>commons-lang</groupId>
-	                    <artifactId>commons-lang</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>-->
+            <!-- EasyB -->
+            <!--<dependency>
+                <groupId>org.easyb</groupId>
+                <artifactId>easyb-core</artifactId>
+                <version>${easyb.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>-->
 
-	        <!-- thucydides -->
-	        <dependency>
-	            <groupId>net.thucydides</groupId>
-	            <artifactId>thucydides-core</artifactId>
-	            <version>${thucydides.version}</version>
-	            <scope>test</scope>
-	            <exclusions>
-	                <!-- Exclude Commons Logging in favor of SLF4j -->
-	                <exclusion>
-	                    <groupId>commons-lang</groupId>
-	                    <artifactId>commons-lang</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>log4j</groupId>
-	                    <artifactId>log4j</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>commons-logging</groupId>
-	                    <artifactId>commons-logging</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>
+            <!-- thucydides -->
+            <dependency>
+                <groupId>net.thucydides</groupId>
+                <artifactId>thucydides-core</artifactId>
+                <version>${thucydides.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <!-- Exclude Commons Logging in favor of SLF4j -->
+                    <exclusion>
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
-	        <dependency>
-	            <groupId>net.thucydides</groupId>
-	            <artifactId>thucydides-junit</artifactId>
-	            <version>${thucydides.version}</version>
-	            <scope>test</scope>
-	        </dependency>
-	        <!--<dependency>
-	            <groupId>net.thucydides.easyb</groupId>
-	            <artifactId>thucydides-easyb-plugin</artifactId>
-	            <version>${thucydides.version}</version>
-	            <scope>test</scope>
-	        </dependency>-->
+            <dependency>
+                <groupId>net.thucydides</groupId>
+                <artifactId>thucydides-junit</artifactId>
+                <version>${thucydides.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--<dependency>
+                <groupId>net.thucydides.easyb</groupId>
+                <artifactId>thucydides-easyb-plugin</artifactId>
+                <version>${thucydides.version}</version>
+                <scope>test</scope>
+            </dependency>-->
 
-	        <!-- JBehave -->
-	        <dependency>
-	            <groupId>org.jbehave</groupId>
-	            <artifactId>jbehave-core</artifactId>
-	            <version>${jbehave.core.version}</version>
-	            <scope>test</scope>
-	            <exclusions>
-	                <exclusion>
-	                    <groupId>log4j</groupId>
-	                    <artifactId>log4j</artifactId>
-	                </exclusion>
-	                <exclusion>
-	                    <groupId>commons-logging</groupId>
-	                    <artifactId>commons-logging</artifactId>
-	                </exclusion>
-	            </exclusions>
-	        </dependency>
+            <!-- JBehave -->
+            <dependency>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-core</artifactId>
+                <version>${jbehave.core.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
-	        <dependency>
-	            <groupId>org.jbehave</groupId>
-	            <artifactId>jbehave-spring</artifactId>
-	            <version>${jbehave.core.version}</version>
-	            <scope>test</scope>
-	        </dependency>
+            <dependency>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-spring</artifactId>
+                <version>${jbehave.core.version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -841,8 +841,8 @@
         == PLUGIN MANAGEMENT (pluginManagement)
         ===========================================================================
         -->
-		<pluginManagement>
-			<plugins>
+        <pluginManagement>
+            <plugins>
 
                 <!--
                 == ActiveMQ
@@ -867,110 +867,110 @@
 
 
                 <plugin>
-	                <groupId>org.apache.maven.plugins</groupId>
-	                <artifactId>maven-antrun-plugin</artifactId>
-	                <version>${maven.ant.plugin}</version>
-	                <executions>
-	                    <execution>
-	                        <id>generateVersionFile</id>
-	                        <phase>compile</phase>
-	                        <configuration>
-	                            <tasks>
-	                                <propertyfile file="${project.build.outputDirectory}/version.properties">
-	                                    <entry key="app.version" value="${project.version}"/>
-	                                    <entry key="app.build" type="date" value="now"/>
-	                                </propertyfile>
-	                            </tasks>
-	                        </configuration>
-	                        <goals>
-	                            <goal>run</goal>
-	                        </goals>
-	                    </execution>
-	                </executions>
-	                <dependencies>
-	                    <dependency>
-	                        <groupId>ant</groupId>
-	                        <artifactId>ant-nodeps</artifactId>
-	                        <version>1.6.5</version>
-	                    </dependency>
-	                </dependencies>
-	            </plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${maven.ant.plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>generateVersionFile</id>
+                            <phase>compile</phase>
+                            <configuration>
+                                <tasks>
+                                    <propertyfile file="${project.build.outputDirectory}/version.properties">
+                                        <entry key="app.version" value="${project.version}"/>
+                                        <entry key="app.build" type="date" value="now"/>
+                                    </propertyfile>
+                                </tasks>
+                            </configuration>
+                            <goals>
+                                <goal>run</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>ant</groupId>
+                            <artifactId>ant-nodeps</artifactId>
+                            <version>1.6.5</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
 
 
                 <!--
                 http://www.mojohaus.org/cobertura-maven-plugin/
                 -->
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>${maven.cobertura.plugin}</version>
-					<configuration>
-					    <formats>
-					        <format>html</format>
-					        <format>xml</format>
-					    </formats>
-						<check>
-							<branchRate>85</branchRate>
-							<lineRate>85</lineRate>
-							<haltOnFailure>true</haltOnFailure>
-							<totalBranchRate>85</totalBranchRate>
-							<totalLineRate>85</totalLineRate>
-							<packageLineRate>85</packageLineRate>
-							<packageBranchRate>85</packageBranchRate>
-							<regexes>
-								<regex>
-									<pattern>com.example.reallyimportant.*</pattern>
-									<branchRate>90</branchRate>
-									<lineRate>80</lineRate>
-								</regex>
-								<regex>
-									<pattern>com.example.boringcode.*</pattern>
-									<branchRate>40</branchRate>
-									<lineRate>30</lineRate>
-								</regex>
-							</regexes>
-						</check>
-						<instrumentation>
-							<ignores>
-								<ignore>com.example.boringcode.*</ignore>
-							</ignores>
-							<excludes>
-								<exclude>com/example/dullcode/**/*.class</exclude>
-								<exclude>com/example/**/*Test.class</exclude>
-							</excludes>
-						</instrumentation>
-					</configuration>
-					<executions>
-						<execution>
-							<goals>
-								<goal>clean</goal>
-								<goal>check</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${maven.cobertura.plugin}</version>
+                    <configuration>
+                        <formats>
+                            <format>html</format>
+                            <format>xml</format>
+                        </formats>
+                        <check>
+                            <branchRate>85</branchRate>
+                            <lineRate>85</lineRate>
+                            <haltOnFailure>true</haltOnFailure>
+                            <totalBranchRate>85</totalBranchRate>
+                            <totalLineRate>85</totalLineRate>
+                            <packageLineRate>85</packageLineRate>
+                            <packageBranchRate>85</packageBranchRate>
+                            <regexes>
+                                <regex>
+                                    <pattern>com.example.reallyimportant.*</pattern>
+                                    <branchRate>90</branchRate>
+                                    <lineRate>80</lineRate>
+                                </regex>
+                                <regex>
+                                    <pattern>com.example.boringcode.*</pattern>
+                                    <branchRate>40</branchRate>
+                                    <lineRate>30</lineRate>
+                                </regex>
+                            </regexes>
+                        </check>
+                        <instrumentation>
+                            <ignores>
+                                <ignore>com.example.boringcode.*</ignore>
+                            </ignores>
+                            <excludes>
+                                <exclude>com/example/dullcode/**/*.class</exclude>
+                                <exclude>com/example/**/*Test.class</exclude>
+                            </excludes>
+                        </instrumentation>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>clean</goal>
+                                <!--<goal>check</goal>-->
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
-				<!--<plugin>
-					<groupId>org.easyb</groupId>
-					<artifactId>maven-easyb-plugin</artifactId>
-					<version>${easyb.plugin.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>test</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<easybTestDirectory>${basedir}/src/test/stories</easybTestDirectory>
-						<storyReport>${project.build.directory}/easyb-stories.txt</storyReport>
-						<xmlReport>${project.build.directory}/easyb-report.xml</xmlReport>
+                <!--<plugin>
+                    <groupId>org.easyb</groupId>
+                    <artifactId>maven-easyb-plugin</artifactId>
+                    <version>${easyb.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <easybTestDirectory>${basedir}/src/test/stories</easybTestDirectory>
+                        <storyReport>${project.build.directory}/easyb-stories.txt</storyReport>
+                        <xmlReport>${project.build.directory}/easyb-report.xml</xmlReport>
 
-						<storyType>html</storyType>
-          				<storyReport>${project.build.directory}/easyb/stories.html</storyReport>
-          				<jvmArguments>-Dwebdriver.driver=${webdriver.driver}</jvmArguments>
-					</configuration>
-				</plugin>-->
+                        <storyType>html</storyType>
+                          <storyReport>${project.build.directory}/easyb/stories.html</storyReport>
+                          <jvmArguments>-Dwebdriver.driver=${webdriver.driver}</jvmArguments>
+                    </configuration>
+                </plugin>-->
 
 
                 <!--
@@ -1081,26 +1081,26 @@
                     <artifactId>maven-source-plugin</artifactId>
                     <version>${maven.source.plugin}</version>
                     <executions>
-                      <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                          <goal>jar-no-fork</goal>
-                        </goals>
-                      </execution>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
                     </executions>
-                  </plugin>
+                </plugin>
 
                 <plugin>
-				    <groupId>net.thucydides.maven.plugins</groupId>
-				    <artifactId>maven-thucydides-plugin</artifactId>
-				    <version>${thucydides.plugin.version}</version>
-				</plugin>
+                    <groupId>net.thucydides.maven.plugins</groupId>
+                    <artifactId>maven-thucydides-plugin</artifactId>
+                    <version>${thucydides.plugin.version}</version>
+                </plugin>
 
-			</plugins>
+            </plugins>
 
 
-		</pluginManagement>
+        </pluginManagement>
 
 
 
@@ -1123,22 +1123,22 @@
         -->
         <plugins>
 
-			<!--
-			== versions-maven-plugin
-			== URL: XXX
-			==
-			== mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
-			 -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<version>${maven.version.range}</version>
-				<configuration>
-					<includesList>com.snaphop</includesList>
-					<generateBackupPoms>false</generateBackupPoms>
-					<allowSnapshots>true</allowSnapshots>
-				</configuration>
-			</plugin>
+            <!--
+            == versions-maven-plugin
+            == URL: XXX
+            ==
+            == mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
+             -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.version.range}</version>
+                <configuration>
+                    <includesList>com.snaphop</includesList>
+                    <generateBackupPoms>false</generateBackupPoms>
+                    <allowSnapshots>true</allowSnapshots>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
@@ -1221,41 +1221,41 @@
                             <goal>sources</goal>
                         </goals>
                     </execution>
-				</executions>
+                </executions>
             </plugin>
 
             <!--
             http://maven.apache.org/plugins/maven-resources-plugin/
             -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>${maven.resources.plugin}</version>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven.resources.plugin}</version>
                 <inherited>true</inherited>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-				<executions>
-					<!--<execution>
-						<id>copy-sitedescriptor</id>
-						<phase>pre-site</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/src/site/</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${site.basedir}/src/site/</directory>
-									<includes>
-										<include>**/site.xml</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>-->
-				</executions>
-			</plugin>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+                <executions>
+                    <!--<execution>
+                        <id>copy-sitedescriptor</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/src/site/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${site.basedir}/src/site/</directory>
+                                    <includes>
+                                        <include>**/site.xml</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>-->
+                </executions>
+            </plugin>
 
             <!-- To locate dependencies: mvn dependency:tree -->
             <plugin>
@@ -1315,55 +1315,55 @@
                     </excludes>
 
                     <systemPropertyVariables>
-             			<webdriver.driver>${webdriver.driver}</webdriver.driver>
-         			</systemPropertyVariables>
+                        <webdriver.driver>${webdriver.driver}</webdriver.driver>
+                    </systemPropertyVariables>
 
                 </configuration>
             </plugin>
 
             <plugin>
-				<groupId>net.thucydides.maven.plugins</groupId>
-				<artifactId>maven-thucydides-plugin</artifactId>
-			</plugin>
+                <groupId>net.thucydides.maven.plugins</groupId>
+                <artifactId>maven-thucydides-plugin</artifactId>
+            </plugin>
 
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>${maven.site.plugin}</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.wagon</groupId>
-						<artifactId>wagon-ssh</artifactId>
-						<version>${wagon_ssh.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ssh</artifactId>
+                        <version>${wagon_ssh.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 
-			<!-- https://github.com/github/maven-plugins -->
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.5</version>
-				<configuration>
+            <!-- https://github.com/github/maven-plugins -->
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.5</version>
+                <configuration>
                     <!-- Needs to be in settings.xml -->
-					<userName>${github.global.userName}</userName>
-					<password>${github.global.password}</password>
-					<repositoryName>SpringCertification</repositoryName>
-					<repositoryOwner>${github.global.userName}</repositoryOwner>
-					<message>Creating site for ${project.version}</message>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site-stage</phase>
-					</execution>
-				</executions>
-			</plugin>
+                    <userName>${github.global.userName}</userName>
+                    <password>${github.global.password}</password>
+                    <repositoryName>SpringCertification</repositoryName>
+                    <repositoryOwner>${github.global.userName}</repositoryOwner>
+                    <message>Creating site for ${project.version}</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site-stage</phase>
+                    </execution>
+                </executions>
+            </plugin>
 
-     	</plugins>
+        </plugins>
     </build>
 
     <!--
@@ -1378,20 +1378,20 @@
     <reporting>
         <plugins>
 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<version>${maven.versions.plugin}</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>dependency-updates-report</report>
-							<report>plugin-updates-report</report>
-							<report>property-updates-report</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.versions.plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 
             <!--
             http://www.mojohaus.org/cobertura-maven-plugin/usage.html
@@ -1401,11 +1401,11 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>${maven.cobertura.plugin}</version>
                 <reportSets>
-                  <reportSet>
-                    <reports>
-                      <report>cobertura</report>
-                    </reports>
-                  </reportSet>
+                    <reportSet>
+                        <reports>
+                            <report>cobertura</report>
+                        </reports>
+                    </reportSet>
                 </reportSets>
             </plugin>
 
@@ -1416,7 +1416,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven.javadoc.plugin}</version>
                 <configuration>
-                	<aggregate>true</aggregate>
+                    <aggregate>true</aggregate>
                     <author>true</author>
                     <bottom>true</bottom>
                     <destDir>javadoc</destDir>
@@ -1430,7 +1430,7 @@
                     <version>true</version>
                     <windowtitle>${project.name} ${project.version} API</windowtitle>
                     <doclet>ydoc.doclets.YStandard</doclet>
-					<docletPath>${site.basedir}/src/yworks/ydoc.jar;${site.basedir}/src/yworks/styleed.jar;${site.basedir}/src/yworks/resources;${project.build.outputDirectory};</docletPath>
+                    <docletPath>${site.basedir}/src/yworks/ydoc.jar;${site.basedir}/src/yworks/styleed.jar;${site.basedir}/src/yworks/resources;${project.build.outputDirectory};</docletPath>
                     <additionalparam>-umlautogen -link http://docs.oracle.com/javase/6/docs/api/</additionalparam>
 
                     <doctitle>API for ${project.name} ${project.version}</doctitle> <!-- Used by javadoc:javadoc goal -->
@@ -1449,7 +1449,7 @@
                             <windowtitle>API for ${project.name} ${project.version}</windowtitle>
                         </configuration>
                         <reports>
-                        	<report>aggregate</report>
+                            <report>aggregate</report>
                             <!-- <report>javadoc</report>
                             <report>test-javadoc</report> -->
                         </reports>
@@ -1461,7 +1461,7 @@
                             <testWindowtitle>Test API for ${project.name} ${project.version}</testWindowtitle>
                         </configuration>
                         <reports>
-                        	<report>aggregate</report>
+                            <report>aggregate</report>
                             <!-- <report>test-javadoc</report> -->
                         </reports>
                     </reportSet>
@@ -1469,88 +1469,88 @@
 
             </plugin>
 
-			<plugin>
-				<groupId>net.thucydides.maven.plugins</groupId>
-				<artifactId>maven-thucydides-plugin</artifactId>
-				<version>${thucydides.plugin.version}</version>
-			</plugin>
+            <plugin>
+                <groupId>net.thucydides.maven.plugins</groupId>
+                <artifactId>maven-thucydides-plugin</artifactId>
+                <version>${thucydides.plugin.version}</version>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>${maven.site.plugin}</version>
-				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>[2.4,)</version>
-							<reports>
-								<report>index</report>
-								<report>project-team</report>
-								<report>license</report>
-								<report>mailing-list</report>
-								<report>dependencies</report>
-								<report>dependency-convergence</report>
-								<report>plugin-management</report>
-								<report>cim</report>
-								<report>issue-tracking</report>
-								<report>scm</report>
-								<report>summary</report>
-							</reports>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>[2.6,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>[2.7,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<version>[2.6,)</version>
-							<configuration>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>jdepend-maven-plugin</artifactId>
-							<version>[2.0-beta-2,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>cobertura-maven-plugin</artifactId>
-							<version>[2.4,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>taglist-maven-plugin</artifactId>
-							<version>[2.4,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-jxr-plugin</artifactId>
-							<version>[2.1,)</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-pmd-plugin</artifactId>
-							<version>[2.5,)</version>
-							<configuration>
-								<linkXref>true</linkXref>
-								<minimumTokens>100</minimumTokens>
-								<minimumPriority>4</minimumPriority>
-								<!-- Change minimum priority to see more or less messages -->
-								<targetJdk>${java.source.version}</targetJdk>
-							</configuration>
-						</plugin>
-					</reportPlugins>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin}</version>
+                <configuration>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>[2.4,)</version>
+                            <reports>
+                                <report>index</report>
+                                <report>project-team</report>
+                                <report>license</report>
+                                <report>mailing-list</report>
+                                <report>dependencies</report>
+                                <report>dependency-convergence</report>
+                                <report>plugin-management</report>
+                                <report>cim</report>
+                                <report>issue-tracking</report>
+                                <report>scm</report>
+                                <report>summary</report>
+                            </reports>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-report-plugin</artifactId>
+                            <version>[2.6,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>[2.7,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>[2.6,)</version>
+                            <configuration>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>jdepend-maven-plugin</artifactId>
+                            <version>[2.0-beta-2,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>cobertura-maven-plugin</artifactId>
+                            <version>[2.4,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>taglist-maven-plugin</artifactId>
+                            <version>[2.4,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-jxr-plugin</artifactId>
+                            <version>[2.1,)</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <version>[2.5,)</version>
+                            <configuration>
+                                <linkXref>true</linkXref>
+                                <minimumTokens>100</minimumTokens>
+                                <minimumPriority>4</minimumPriority>
+                                <!-- Change minimum priority to see more or less messages -->
+                                <targetJdk>${java.source.version}</targetJdk>
+                            </configuration>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
 
         </plugins>
     </reporting>
@@ -1630,14 +1630,14 @@
         </repository>
 
         <!--<repository>-->
-			<!--<id>sonatype-snapshots</id>-->
-			<!--<url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
-		<!--</repository>-->
+        <!--<id>sonatype-snapshots</id>-->
+        <!--<url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
+        <!--</repository>-->
 
-		<!-- <repository>
-			<id>mickknutson-snapshots</id>
-			<url>https://github.com/mickknutson/SpringCertification/raw/master/releases</url>
-		</repository> -->
+        <!-- <repository>
+            <id>mickknutson-snapshots</id>
+            <url>https://github.com/mickknutson/SpringCertification/raw/master/releases</url>
+        </repository> -->
 
     </repositories>
 
@@ -1656,15 +1656,15 @@
         </pluginRepository>
 
         <pluginRepository>
-			<id>oss-sonatype-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</pluginRepository>
+            <id>oss-sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </pluginRepository>
 
         <!-- For SoapUi -->
-  		<pluginRepository>
-      		<id>eviwarePluginRepository</id>
-      		<url>http://www.eviware.com/repository/maven2/</url>
-   		</pluginRepository>
+        <pluginRepository>
+            <id>eviwarePluginRepository</id>
+            <url>http://www.eviware.com/repository/maven2/</url>
+        </pluginRepository>
 
 
         <!-- FIXME: Do I need these??? -->
