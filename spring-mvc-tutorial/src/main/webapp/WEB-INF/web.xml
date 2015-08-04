@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="bfl"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="false"
+         version="3.0"
+        >
+
+    <display-name>BFL Application</display-name>
+    <description>BASE Fatality List</description>
+
+
+    <!-- Vaadin Production Mode (true / false) -->
+    <context-param>
+        <param-name>productionMode</param-name>
+        <param-value>${vaadinProductionMode}</param-value>
+    </context-param>
+
+    <!-- Spring -->
+    <!--<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>-->
+
+    <!-- Specifies the default mode of this application, to be activated if no other profile (or mode) is specified.
+    embedded, dev, qa, prod
+    -->
+    <context-param>
+        <param-name>spring.profiles.default</param-name>
+        <param-value>dev</param-value>
+    </context-param>
+    <context-param>
+        <param-name>spring.profiles.active</param-name>
+        <param-value>${activeSpringProfile}</param-value>
+    </context-param>
+
+
+    <context-param>
+        <param-name>defaultHtmlEscape</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <!-- ICEPush Email. Not sure what this is for, but it starts automatically with ICEPush -->
+    <context-param>
+        <param-name>smtp.host</param-name>
+        <param-value>${smtp.host}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>smtp.port</param-name>
+        <param-value>${smtp.port}</param-value>
+    </context-param>
+    <context-param>
+        <param-name>smtp.from</param-name>
+        <param-value>${smtp.from}</param-value>
+    </context-param>
+
+    <!--<context-param>-->
+    <!--<param-name>smtp.user</param-name>-->
+    <!--<param-value>mickknutson@gmail.com</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+    <!--<param-name>smtp.password</param-name>-->
+    <!--<param-value>1235</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+    <!--<param-name>smtp.security</param-name>-->
+    <!--<param-value>SSL</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+    <!--<param-name>smtp.verify-server-certificate</param-name>-->
+    <!--<param-value>false</param-value>-->
+    <!--</context-param>-->
+
+
+
+    <!-- Vaadin servlet -->
+    <!--<servlet>
+        <servlet-name>SpringVaadinServlet</servlet-name>
+        <servlet-class>ru.xpoft.vaadin.SpringVaadinServlet</servlet-class>
+        <init-param>
+            <param-name>beanName</param-name>
+            <param-value>appUI</param-value>
+        </init-param>
+        <init-param>
+            <param-name>systemMessagesBeanName</param-name>
+            <param-value>DEFAULT</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringVaadinServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SpringVaadinServlet</servlet-name>
+        <url-pattern>/VAADIN/*</url-pattern>
+    </servlet-mapping>-->
+
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!--<error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/uncaughtException</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/resourceNotFound</location>
+    </error-page>-->
+
+</web-app>

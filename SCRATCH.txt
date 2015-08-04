@@ -1,0 +1,208 @@
+
+
+
+
+
+    <!--================================================================-->
+    <!-- PROFILES -->
+    <!--
+        mvn tomcat7:run -e -P embedded
+        mvn tomcat7:run -e -P dev-local
+        mvn tomcat7:run -e -P dev
+
+        mvn verify -P integration
+    -->
+    <!--================================================================-->
+    <profiles>
+
+        <profile>
+            <id>embedded</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <loggingConfig>configurations/profiles/embedded/logback.xml</loggingConfig>
+
+                <activeSpringProfile>embedded</activeSpringProfile>
+                <vaadinProductionMode>false</vaadinProductionMode>
+            </properties>
+
+            <build>
+                <filters>
+                    <filter>configurations/properties/embedded-filter.properties</filter>
+                </filters>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+
+                <plugins>
+                </plugins>
+            </build>
+
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <name>Maven Repository Switchboard</name>
+                    <layout>default</layout>
+                    <url>http://repo1.maven.org/maven2</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+
+                <repository>
+                    <id>vaadin-addons</id>
+                    <url>http://maven.vaadin.com/vaadin-addons</url>
+                </repository>
+                <repository>
+                    <id>icepush</id>
+                    <url>http://anonsvn.icefaces.org/repo/maven2/releases/</url>
+                </repository>
+
+                <!--<repository>
+                    <id>eclipselink</id>
+                    <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+                </repository>-->
+
+
+                <!-- JBoss repo only needed for Spring Security Dependency
+                of com.sun.xml.wsit:xws-security:jar:1.3.1 -->
+                <repository>
+                    <id>jboss.repository.releases.public</id>
+                    <name>JBoss Repo Public</name>
+                    <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+                    <!--<url>https://repository.jboss.org/nexus/content/groups/public/</url>-->
+                </repository>
+
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>apache.public</id>
+                    <name>Apache public</name>
+                    <url>https://repository.apache.org/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+                <pluginRepository>
+                    <id>apache.snapshots</id>
+                    <name>Apache Snapshots</name>
+                    <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+                <!--<pluginRepository>
+                    <id>codehaus-snapshots</id>
+                    <url>http://nexus.codehaus.org/snapshots</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </pluginRepository>-->
+
+            </pluginRepositories>
+
+        </profile>
+
+
+        <!-- mvn install -p=dev-local -->
+        <profile>
+            <id>dev-local</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <properties>
+                <activeSpringProfile>dev</activeSpringProfile>
+                <vaadinProductionMode>false</vaadinProductionMode>
+            </properties>
+
+            <build>
+                <plugins>
+                </plugins>
+            </build>
+
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <name>Maven Repository Switchboard</name>
+                    <layout>default</layout>
+                    <url>http://repo1.maven.org/maven2</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+
+                <repository>
+                    <id>vaadin-addons</id>
+                    <url>http://maven.vaadin.com/vaadin-addons</url>
+                </repository>
+                <!--<repository>
+                    <id>icepush</id>
+                    <url>http://anonsvn.icefaces.org/repo/maven2/releases/</url>
+                </repository>-->
+                <repository>
+                    <id>eclipselink</id>
+                    <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+                </repository>
+
+                <repository>
+                    <id>jboss</id>
+                    <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>apache.public</id>
+                    <name>Apache public</name>
+                    <url>https://repository.apache.org/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+                <pluginRepository>
+                    <id>apache.snapshots</id>
+                    <name>Apache Snapshots</name>
+                    <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+            </pluginRepositories>
+        </profile>
+
+    </profiles>
+
+    <!--================================================================-->

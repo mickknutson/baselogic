@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="com.baselogic.bfl" transaction-type="RESOURCE_LOCAL">
+        <class>com.baselogic.bfl.domain.AbstractEntity</class>
+        <class>com.baselogic.bfl.domain.Incident</class>
+
+        <!--<class>org.vaadin.activiti.simpletravel.domain.Expense</class>
+        <class>org.vaadin.activiti.simpletravel.domain.TravelInvoice</class>
+        <class>org.vaadin.activiti.simpletravel.domain.TravelInvoiceDecision</class>
+        <class>org.vaadin.activiti.simpletravel.domain.TravelRequest</class>
+        <class>org.vaadin.activiti.simpletravel.domain.TravelRequestDecision</class>
+
+        <class>com.comcast.oxygen.codewash.domain.AbstractEntity</class>
+
+        <class>com.comcast.oxygen.codewash.domain.SudRequest</class>
+        <class>com.comcast.oxygen.codewash.domain.Malfunction</class>
+        <class>com.comcast.oxygen.codewash.domain.Comment</class>-->
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <!-- We handle validation manually in the service layer -->
+        <validation-mode>NONE</validation-mode>
+        <properties>
+            <property name="eclipselink.weaving" value="false"/>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <!--
+                http://wiki.eclipse.org/EclipseLink/Examples/JPA/Logging
+WARNING	 This level enables logging of issues that have a potential to cause problems. For example, a setting that is picked by the application and not by the user.
+INFO	 This level enables the standard output. The contents of this output is very limited. It is the default logging level if a logging level is not set.
+CONFIG	 This level enables logging of such configuration details as your database login information and some metadata information. You may want to use the CONFIG log level at deployment time.
+FINE	 This level enables logging of the first level of the debugging information and SQL. You may want to use this log level during debugging and testing, but not at production.
+FINER	 This level enables logging of more debugging information than the FINE setting. For example, the transaction information is logged at this level. You may want to use this log level during debugging and testing, but not at production.
+
+            -->
+            <property name="eclipselink.logging.level" value="INFO"/>
+
+        </properties>
+    </persistence-unit>
+
+
+<!--
+    <persistence-unit name="H2_PU" transaction-type="RESOURCE_LOCAL">
+        <class>com.comcast.oxygen.codewash.domain.AbstractEntity</class>
+        <class>com.comcast.oxygen.codewash.domain.SudRequest</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        &lt;!&ndash; We handle validation manually in the service layer &ndash;&gt;
+        <validation-mode>NONE</validation-mode>
+        <properties>
+            <property name="eclipselink.weaving" value="false"/>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
+
+            &lt;!&ndash; Embedded mode &ndash;&gt;
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+        </properties>
+    </persistence-unit>
+-->
+
+</persistence>
+
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="addressbook">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.jdbc.platform"
+				value="org.eclipse.persistence.platform.database.H2Platform" />
+			<property name="eclipselink.jdbc.driver" value="org.h2.Driver" />
+			<property name="eclipselink.jdbc.url" value="jdbc:h2:Ëœ/jpacontaineraddressbookh2db" />
+			<property name="eclipselink.jdbc.user" value="sa" />
+			<property name="eclipselink.jdbc.password" value="sa" />
+			<property name="eclipselink.logging.level" value="FINE" />
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode"
+				value="database" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
+-->

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="false">
+
+    <!-- Allow any bean to be exposed as an mbean.  Just use @ManagedResource and @ManagedAttribute -->
+    <bean id="exporter" class="org.springframework.jmx.export.MBeanExporter" lazy-init="false">
+        <property name="assembler" ref="assembler"/>
+        <property name="namingStrategy" ref="namingStrategy"/>
+        <property name="autodetect" value="true"/>
+        <property name="registrationBehaviorName" value="REGISTRATION_IGNORE_EXISTING"/>
+    </bean>
+
+    <bean id="attributeSource" class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource"/>
+
+    <bean id="namingStrategy" class="org.springframework.jmx.export.naming.MetadataNamingStrategy">
+        <property name="attributeSource" ref="attributeSource"/>
+    </bean>
+
+    <bean id="assembler" class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler">
+        <property name="attributeSource" ref="attributeSource"/>
+    </bean>
+
+
+    <!-- this bean must not be lazily initialized if the exporting is to happen -->
+    <!--<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter"
+          depends-on="orderManagementServicePort"
+          lazy-init="false">
+        <property name="beans">
+            <map>
+                <entry key="bean:name=orderManagementServicePort1" value-ref="orderManagementServicePort"/>
+            </map>
+        </property>
+    </bean>-->
+
+    <!--<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter"
+          lazy-init="false">
+        <property name="assembler" ref="assembler"/>
+        <property name="namingStrategy" ref="namingStrategy"/>
+        <property name="autodetect" value="true"/>
+        <property name="registrationBehaviorName" value="REGISTRATION_IGNORE_EXISTING"/>
+        <property name="beans">
+            <map>
+                <entry key="Hibernate:name=statistics" value-ref="hibernateStatistics"/>
+            </map>
+        </property>
+    </bean>-->
+
+</beans>

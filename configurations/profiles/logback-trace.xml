@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<jmxConfigurator />
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+		<file>target/EIVR-TRACE.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>target/cuke.%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+            <pattern>%d %5p | [%thread] | %-5logger{36}.%method | %m %n</pattern>
+		</encoder>
+	</appender>
+
+    <!-- Standard Console layout -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- On Windows machines setting withJansi to true enables ANSI
+                 color code interpretation by the Jansi library. This requires
+                 org.fusesource.jansi:jansi:1.8 on the class path.  Note that
+                 Unix-based operating systems such as Linux and Mac OS X
+                 support ANSI color codes by default. -->
+        <!--<withJansi>true</withJansi>-->
+
+		<!-- encoders are assigned by default the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} %5p | %-6logger{20}.%method | %m %n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Available Levels: Valid values are TRACE, DEBUG, INFO, WARN, ERROR or FATAL. -->
+
+	<logger name="org.apache" level="WARN" />
+
+
+    <!-- Use level="TRACE" for more detailed logging -->
+	<root level="TRACE">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

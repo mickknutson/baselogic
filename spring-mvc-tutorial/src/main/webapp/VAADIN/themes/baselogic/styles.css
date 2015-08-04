@@ -1,0 +1,106 @@
+@import "../reindeer/styles.css";
+
+/* Add Codewash specific CSS styles */
+
+.middleArea {
+    background: orange;
+}
+
+.topBar {
+    background: #adff2f;
+}
+
+.actionBar {
+    background: yellow;
+}
+
+.leftArea {
+    background: #8a2be2;
+}
+
+
+.rightArea {
+    background: #8a2be2;
+}
+
+
+
+/*
+"top:500.0px;left:10px;"
+*/
+
+
+/* Trying to add scroll bars as per this thread:
+https://vaadin.com/forum/-/message_boards/view_message/100175
+*/
+.vLayoutScroll > div{
+overflow: auto !important;
+}
+
+
+/* TODO want to rename these styles
+https://vaadin.com/forum/-/message_boards/view_message/1156143
+*/
+.example h1 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.example h2 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.example .horizontal-separator, .example .vertical-separator {
+    background:black;
+}
+
+
+/* This is from simple travel to change the background based on group */
+
+.v-horizontallayout-header-RELEASE_MANAGER {
+    background: -moz-linear-gradient(top, #0f0, #060);
+    background: -webkit-gradient(linear, left top, left bottom, from(#0f0), to(#060));
+}
+
+.v-horizontallayout-header-RELEASE_MANAGER .v-label-h1 {
+    color: #000;
+    text-shadow: #0f0 0 -1px 1px;
+}
+
+.v-horizontallayout-header-TESTER {
+    background: -moz-linear-gradient(top, #f00, #600);
+    background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#600));
+}
+
+.v-horizontallayout-header-TESTER .v-label-h1 {
+    color: #000;
+    text-shadow: #f00 0 -1px 1px;
+}
+
+.v-horizontallayout-header-DEVELOPER {
+    background: -moz-linear-gradient(top, #ff0, #660);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff0), to(#660));
+}
+
+.v-horizontallayout-header-DEVELOPER .v-label-h1 {
+    color: #000;
+    text-shadow: #ff0 0 -1px 1px;
+}
+
+
+/* TODO want to rename these styles
+https://vaadin.com/forum/-/message_boards/view_message/1156143
+*/
+.example h1 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.example h2 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.example .horizontal-separator, .example .vertical-separator {
+    background:black;
+}
+
