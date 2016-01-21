@@ -1,8 +1,6 @@
 package com.baselogic.tutorials.reference.security;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,16 +18,6 @@ public final class AsymmetricKeyEncryptionDemoTests {
 
     private static final Logger logger = LoggerFactory.getLogger(AsymmetricKeyEncryptionDemoTests.class);
 
-    //-----------------------------------------------------------------------//
-    // Lifecycle Methods
-    //-----------------------------------------------------------------------//
-    @Before
-    public void beforeEachTest() throws Exception {
-    }
-
-    @After
-    public void afterEachTest() throws Exception {
-    }
 
     //-----------------------------------------------------------------------//
     // Unit Tests
@@ -65,5 +53,23 @@ public final class AsymmetricKeyEncryptionDemoTests {
         assertThat(decryptedText, is(originalText));
 
     }
+
+
+    //-----------------------------------------------------------------------//
+    // Lifecycle Methods
+    //-----------------------------------------------------------------------//
+    @BeforeClass
+    public static void beforeClass(){
+        logger.warn("=== BEFORE ============================================");
+    }
+    @AfterClass
+    public static void afterClass(){
+        logger.warn("=== AFTER =============================================");
+    }
+    @Before
+    public void beforeEachTest() throws Exception {}
+
+    @After
+    public void afterEachTest() throws Exception {}
 
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<Context antiJARLocking="true" path="/jax-rs-demo" disableURLRewriting="true">-->
+<Context antiJARLocking="true" path="/jax-rs-demo">
+    <!--<Loader delegate="false" loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader" />-->
+</Context>

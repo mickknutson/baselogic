@@ -8,6 +8,6 @@ import org.slf4j.LoggerFactory;
  */
 public final class KeyWraperDemo {
 
-    private static final Logger logger = LoggerFactory.getLogger(DigitalSignatureDemo.class);
+    private static final Logger logger = LoggerFactory.getLogger(KeyWraperDemo.class);
 
 }

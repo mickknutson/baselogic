@@ -21,7 +21,7 @@
         <encoder>
             <!--<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
                </pattern>-->
-            <pattern>%d %5p | [%thread] | %-5logger{36}.%method | %m %n</pattern>
+            <pattern>%d %8p | [%thread] | %-5logger{36}.%method | %m %n</pattern>
         </encoder>
     </appender>
 
@@ -32,17 +32,11 @@
 		<encoder>
 			<!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
 			<!--<pattern>%date{HH:mm:ss.SSS} %5p | %-55logger{55}.%method | %m %n</pattern>-->
-			<pattern>%date{HH:mm:ss.SSS} %5p | %-6logger{40}.%method | %m %n</pattern>
+			<pattern>%date{HH:mm:ss.SSS} %8p | %-6logger{40}.%method | %m %n</pattern>
 		</encoder>
 	</appender>
 
 	<!-- Available Levels: Valid values are TRACE, DEBUG, INFO, WARN, ERROR or FATAL. -->
-
-    <!-- Vaadin -->
-	<logger name="org.icepush.servlet" level="TRACE" />
-    <logger name="com.vaadin" level="TRACE" />
-    <logger name="ru.xpoft" level="TRACE"/>
-
 
 	<logger name="org.apache" level="TRACE" />
 
@@ -59,6 +53,7 @@
     <logger name="org.openjpa" level="WARN" />
     <logger name="com.jolbox.bonecp" level="TRACE" />
     <logger name="org.dbunit" level="TRACE" />
+    <logger name="javax.crypto" level="DEBUG" />
 
 
     <!-- Use level="TRACE" for more detailed logging -->

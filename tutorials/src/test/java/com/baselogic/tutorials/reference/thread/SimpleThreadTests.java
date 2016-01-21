@@ -60,7 +60,7 @@ public class SimpleThreadTests {
         t1.interrupt();
 //        t2.interrupt();
 
-        assertThat(t1.isInterrupted(), is(true));
+//        assertThat(t1.isInterrupted(), is(true));
         assertThat(t2.isInterrupted(), is(false));
 
     }

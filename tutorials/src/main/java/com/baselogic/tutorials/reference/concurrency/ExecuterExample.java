@@ -7,23 +7,22 @@ import java.util.concurrent.*;
  */
 public class ExecuterExample {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 
         // Do commands 1-2
 
         ExecutorService service = Executors.newSingleThreadExecutor();
 
         Future<String> result = service.submit(
-                                            new Callable<String>() {
+                new Callable<String>() {
 
-                                                    @Override
-                                                    public String call() throws Exception {
-                                                        // call commands 3-5
-                                                        return "Foo Bar says what????";
-                                                    }
-                                            }
+                    @Override
+                    public String call() throws Exception {
+                        // call commands 3-5
+                        return "Foo Bar says what????";
+                    }
+                }
         );
-
 
 
         /**
@@ -31,7 +30,7 @@ public class ExecuterExample {
          */
         try {
 
-             String response = result.get(42, TimeUnit.MILLISECONDS); // TimeUnit.SECONDS
+            String response = result.get(42, TimeUnit.MILLISECONDS); // TimeUnit.SECONDS
 
         } catch (InterruptedException | ExecutionException e) {
             throw new Exception();

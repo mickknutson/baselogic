@@ -8,7 +8,10 @@
 
     <groupId>com.baselogic</groupId>
     <artifactId>tutorials</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+    <description>Java Tutorials</description>
 
     <parent>
         <groupId>com.baselogic</groupId>
@@ -16,42 +19,22 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <name>${project.artifactId}</name>
-    <description>Java Tutorials</description>
 
     <!--====================================================================-->
     <!-- PROPERTIES -->
     <!--====================================================================-->
     <properties>
-
-        <java.version>1.8</java.version>
-
         <jetty.scanIntervalSeconds>30</jetty.scanIntervalSeconds>
-
 
         <junit.enableAssertions>true</junit.enableAssertions>
         <junit.failIfNoTests>true</junit.failIfNoTests>
-
-        <!-- [WARNING] The parameter forkMode is deprecated since version 2.14.
-        Use forkCount and reuseForks instead. -->
         <junit.forkCount>50</junit.forkCount>
         <junit.reuseForks>true</junit.reuseForks>
-
-        <junit.parallel>both</junit.parallel>
-        <junit.printSummary>true</junit.printSummary>
-        <junit.reuseForks>false</junit.reuseForks>
-        <!--<junit.threadCount>50</junit.threadCount>-->
-        <!--<junit.useFile>false</junit.useFile>-->
-        <!--<junit.useSystemClassLoader>true</junit.useSystemClassLoader>-->
-        <junit.useUnlimitedThreads>false</junit.useUnlimitedThreads>
-
-        <profile.resources>configurations/profiles/embedded</profile.resources>
+        <junit.useSystemClassLoader>true</junit.useSystemClassLoader>
 
     </properties>
 
     <build>
-
-        <finalName>${project.artifactId}</finalName>
 
         <!--================================================================-->
         <!-- PLUGINS -->

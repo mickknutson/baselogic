@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
+
     <packaging>jar</packaging>
 
     <groupId>com.baselogic</groupId>
@@ -13,7 +12,6 @@
 
     <name>${project.artifactId}</name>
     <description>Common reference for tutorials</description>
-
 
     <parent>
         <groupId>com.baselogic</groupId>
@@ -29,10 +27,7 @@
     <!-- PROPERTIES -->
     <!--====================================================================-->
     <properties>
-        <jetty.scanIntervalSeconds>30</jetty.scanIntervalSeconds>
-
-        <junit.enableAssertions>true</junit.enableAssertions>
-        <junit.failIfNoTests>true</junit.failIfNoTests>
+        <junit.failIfNoTests>false</junit.failIfNoTests>
         <junit.forkCount>50</junit.forkCount>
         <junit.reuseForks>true</junit.reuseForks>
         <junit.useSystemClassLoader>true</junit.useSystemClassLoader>

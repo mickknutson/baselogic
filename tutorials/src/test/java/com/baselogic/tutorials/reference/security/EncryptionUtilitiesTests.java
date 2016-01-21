@@ -105,10 +105,10 @@ public class EncryptionUtilitiesTests {
 
         logger.info("Decrypted Data: {}", decryptedText);
         assertThat(decryptedText, is(originalText));
-        logger.info("=======================================================");
+        logger.info("-----------------------------");
     }
 
-    @Test
+//    @Test
     public void encryptAndDecryptTests() throws Exception {
 
         for(Algorithm algorithm: algorithms){

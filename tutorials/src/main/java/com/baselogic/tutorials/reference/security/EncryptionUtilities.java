@@ -3,6 +3,9 @@ package com.baselogic.tutorials.reference.security;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
+import org.apache.commons.codec.binary.Hex;
+
 import javax.crypto.*;
 import java.io.*;
 import java.security.*;
@@ -199,28 +202,17 @@ public final class EncryptionUtilities {
     @SuppressWarnings("unchecked")
     protected static <T> T getKeyFromFile(final String fileName) {
 
-        ObjectInputStream inputStream = null;
-
         T key = null;
 
-        try {
-            inputStream = new ObjectInputStream(
-                    new FileInputStream(fileName));
-
-            // @SuppressWarnings("unchecked")
+        try (ObjectInputStream inputStream = new ObjectInputStream(
+                new FileInputStream(fileName))
+        ){
             key = (T) inputStream.readObject();
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
-                }
-            }
         }
+
         return key;
     }
 
@@ -232,9 +224,10 @@ public final class EncryptionUtilities {
     protected static void saveKeyToFile(final String fileName, final Key key) {
 
         File keyFile = new File(fileName);
-        ObjectOutputStream keyOs = null;
 
-        try {
+        try (ObjectOutputStream keyOs = new ObjectOutputStream(
+                new FileOutputStream(keyFile)))
+        {
 //            keyFile = new File(fileName);
             if (keyFile.getParentFile() != null) {
                 boolean mkdirsResult = keyFile.getParentFile().mkdirs();
@@ -250,22 +243,10 @@ public final class EncryptionUtilities {
                 throw new RuntimeException("keyFile.createNewFile() failed");
             }
 
-            keyOs = new ObjectOutputStream(
-                    new FileOutputStream(keyFile));
-
             keyOs.writeObject(key);
-            keyOs.close();
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (keyOs != null) {
-                try {
-                    keyOs.close();
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
-                }
-            }
         }
     }
 
@@ -279,9 +260,13 @@ public final class EncryptionUtilities {
     protected static void exportKeyWrapToFile(final SecretKey secretKey, final String algorithmModePad, final String fileName) {
 
         File keyFile = new File(fileName);
-        DataOutputStream dos = null;
 
-        try {
+
+        try (
+                DataOutputStream dos = new DataOutputStream(
+                new FileOutputStream(keyFile))
+        )
+        {
 
             // start
             Cipher c = Cipher.getInstance(algorithmModePad);
@@ -289,21 +274,10 @@ public final class EncryptionUtilities {
 
             byte[] wrappedKey = c.wrap(secretKey);
 
-            dos = new DataOutputStream(new FileOutputStream(keyFile));
-
             dos.write(wrappedKey, 0, wrappedKey.length);
-            dos.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (dos != null) {
-                try {
-                    dos.close();
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
-                }
-            }
         }
     }
 
@@ -366,15 +340,76 @@ public final class EncryptionUtilities {
             }
             br.close();
 
-
-
         } catch (Exception e) {
             logger.error("Error : {}", e.getMessage(), e);
         }
         return sb.toString();
     }
 
+    //-----------------------------------------------------------------------//
+    //-----------------------------------------------------------------------//
 
+    /**
+     *
+     * @param algorithm
+     * @param clearText
+     * @param salt
+     * @return MessageDigest as a byte[]
+     * @throws NoSuchAlgorithmException
+     */
+    public static byte[] generateMessageDigest(final String algorithm,
+                                               final byte[] salt,
+                                               final String clearText)
+            throws NoSuchAlgorithmException {
+
+        MessageDigest md = MessageDigest.getInstance(algorithm);
+        byte[] hash1 = md.digest(clearText.getBytes());
+
+        // Resets the digest for further use.
+//        md.reset();
+
+        byte[] hash2 = md.digest(hash1);
+
+        // Resets the digest for further use.
+//        md.reset();
+
+        if (salt != null) {
+            // Updates the digest using the specified array of bytes.
+            md.update(salt);
+        }
+
+        // Resets the digest for further use.
+//        md.reset();
+
+        // Updates the digest using the specified array of bytes.
+        md.update(hash2);
+
+        byte[] digest = md.digest();
+
+        for (int i = 0; i < digest.length; i++) {
+            digest[i] = (byte) (digest[i] ^ hash1[i]);
+        }
+
+        return digest;
+    }
+
+
+    public static byte[] generateMessageDigest(final String algorithm,
+                                               final String clearText)
+            throws NoSuchAlgorithmException {
+
+        return generateMessageDigest(algorithm, null, clearText);
+    }
+
+    public static String toBase64(byte[] input) {
+        return org.apache.commons.codec.binary.Base64.encodeBase64String(input);
+//        return new String(Base64.getEncoder().encode(input));
+    }
+
+    public static String toHex(byte[] input) {
+        return Hex.encodeHexString(input);
+//        return String.format("%0" + (input.length << 1) + "x", new BigInteger(1, input));
+    }
 
 
 } // The End...

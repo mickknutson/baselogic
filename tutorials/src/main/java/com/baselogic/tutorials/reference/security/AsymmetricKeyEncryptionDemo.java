@@ -16,9 +16,6 @@ public final class AsymmetricKeyEncryptionDemo {
 
     /* Define constants for algorithm and key files */
     public static final String ALGORITHM = "RSA";
-    public static final String ALGORITHM_MODE_PAD = "AES/ECB/PKCS5Padding";
-//    public static final String ALGORITHM_MODE_PAD = "AES/CBC/PKCS5Padding";
-//    public static final String ALGORITHM_MODE_PAD = "AES/CTR/NoPadding";
 
     public static final String PRIVATE_KEY_FILE = "target/private.key";
     public static final String PUBLIC_KEY_FILE = "target/public.key";

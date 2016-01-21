@@ -1,6 +1,6 @@
 package com.baselogic.tutorials.reference.security;
 
-import org.junit.Test;
+import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,4 +23,20 @@ public class DigitalSignatureDemoTests {
         //tbd
     }
 
+    //-----------------------------------------------------------------------//
+    // Lifecycle Methods
+    //-----------------------------------------------------------------------//
+    @BeforeClass
+    public static void beforeClass(){
+        logger.warn("=== BEFORE ============================================");
+    }
+    @AfterClass
+    public static void afterClass(){
+        logger.warn("=== AFTER =============================================");
+    }
+    @Before
+    public void beforeEachTest() throws Exception {}
+
+    @After
+    public void afterEachTest() throws Exception {}
 }

@@ -17,12 +17,11 @@
 
     <url>https://github.com/mickknutson/baselogic</url>
 
-
     <parent>
         <groupId>com.baselogic</groupId>
         <artifactId>parent</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
-        <!--<relativePath>./parent</relativePath>-->
+        <version>1.0.0-RELEASE</version>
+        <relativePath>./parent</relativePath>
     </parent>
 
 
@@ -93,6 +92,7 @@
         <module>common</module>
         <module>jdbc</module>
         <module>tutorials</module>
+        <module>jax-rs-demo</module>
 
         <!--<module>spring-aop</module>-->
         <!--<module>spring-configuration</module>-->
@@ -136,157 +136,16 @@
 
         <!--=== dependencies ===============================================-->
 
-        <!-- Common -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
-		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		</dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-        </dependency>
-
-
-        <!--=== dependencies ===============================================-->
-
-        <!-- Test -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-        </dependency>
-
-        <!-- EasyB -->
-		<!--<dependency>
-			<groupId>org.easyb</groupId>
-			<artifactId>easyb-core</artifactId>
-		</dependency>-->
-
-
-
-        <!-- Should not use on all projects -->
-        <!-- thucydides -->
-		<!--<dependency>
-			<groupId>net.thucydides</groupId>
-			<artifactId>thucydides-core</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>net.thucydides</groupId>
-			<artifactId>thucydides-junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>net.thucydides.easyb</groupId>
-			<artifactId>thucydides-easyb-plugin</artifactId>
-		</dependency>-->
-
-        <!-- JBehave -->
-        <!--<dependency>
-            <groupId>org.jbehave</groupId>
-            <artifactId>jbehave-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jbehave</groupId>
-            <artifactId>jbehave-spring</artifactId>
-        </dependency>-->
-
-
-        <!--<dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-api</artifactId>
-            <version>1.0.2.v20150114</version>
-        </dependency>-->
-
-        <!--<dependency>
-            <groupId>org.sonatype.aether</groupId>
-            <artifactId>aether-api</artifactId>
-            <version>1.13.1</version>
-        </dependency>-->
-
-
-
-        <!--=== dependencies ===============================================-->
-        <!--=== dependencies ===============================================-->
-        <!--=== dependencies ===============================================-->
-
     </dependencies>
 
 
     <!-- =================================================================== -->
     <build>
-	    <!-- =============================================================== -->
-
-		<pluginManagement>
-			<plugins>
-
-			</plugins>
-		</pluginManagement>
-
 
         <!--================================================================-->
         <!-- PLUGINS -->
         <!--================================================================-->
         <plugins>
-
-            <!-- Usage:
-            mvn cobertura:cobertura
-            -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-            </plugin>
 
         </plugins>
     </build>

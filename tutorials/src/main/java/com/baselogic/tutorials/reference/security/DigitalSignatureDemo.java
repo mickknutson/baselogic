@@ -37,7 +37,7 @@ public final class DigitalSignatureDemo {
 	 * This method generates a digital signature and saves the digital signature
 	 * along with the public key to the file system
 	 */
-	static void generateDigitalSignature(String input) {
+	public static void generateDigitalSignature(String input) {
 		try {
 
 			/* Obtain input text to sign as a byte array */
@@ -69,7 +69,7 @@ public final class DigitalSignatureDemo {
 			FileOutputStream sigFos = new FileOutputStream("signature.sig");
 			sigFos.write(signatureBytes);
 			sigFos.close();
-			System.out.println("Digital signature saved to: signature.sig");
+            logger.info("Digital signature saved to: signature.sig");
 
 			/* Save the public key to a file */
 			byte[] key = pub.getEncoded();
@@ -77,16 +77,16 @@ public final class DigitalSignatureDemo {
 			keyFos.write(key);
 			keyFos.close();
 
-			System.out.println("Public key saved to: pubk.key");
+            logger.info("Public key saved to: pubk.key");
 
 		} catch (Exception e) {
-			System.err.println("Caught exception " + e.toString());
+            logger.error("Caught exception {}", e.getMessage(), e);
 		}
 
 	}
 
 	/* This method verifies a digital signature */
-	static void verifyDigitalSignature(String input) {
+	public static void verifyDigitalSignature(String input) {
 		try {
 
 			/* Retrive the public key from the file system */
@@ -108,6 +108,7 @@ public final class DigitalSignatureDemo {
 
 			/* Verify the signature */
 			Signature sig = Signature.getInstance("SHA1withRSA");
+
 			sig.initVerify(pubKey);
 
 			byte[] data = input.getBytes("UTF8");
@@ -116,10 +117,9 @@ public final class DigitalSignatureDemo {
 
 			boolean result = sig.verify(sigToVerify);
 
-			System.out.println("Signature verification result: " + result);
+			logger.info("Signature verification result: {}", result);
 
-		} catch (Exception ex) {
-
+        } catch (Exception ex) {
 			ex.printStackTrace();
 		}
 

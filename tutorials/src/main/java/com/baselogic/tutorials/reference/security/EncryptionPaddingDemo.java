@@ -3,15 +3,9 @@ package com.baselogic.tutorials.reference.security;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+import java.security.GeneralSecurityException;
 
 /**
  * For ECB and CBC modes of operation, each block (128 bits or 16 bytes for AES)
@@ -65,6 +59,23 @@ import java.security.NoSuchAlgorithmException;
  * Look into Ciphertext stealing (CTS)
  *
  *
+ * Every implementation of the Java platform is required to support the following standard Cipher transformations with the keysizes in parentheses:
+ *  AES/CBC/NoPadding (128)
+ *  AES/CBC/PKCS5Padding (128)
+ *  AES/ECB/NoPadding (128)
+ *  AES/ECB/PKCS5Padding (128)
+ *  DES/CBC/NoPadding (56)
+ *  DES/CBC/PKCS5Padding (56)
+ *  DES/ECB/NoPadding (56)
+ *  DES/ECB/PKCS5Padding (56)
+ *  DESede/CBC/NoPadding (168)
+ *  DESede/CBC/PKCS5Padding (168)
+ *  DESede/ECB/NoPadding (168)
+ *  DESede/ECB/PKCS5Padding (168)
+ *  RSA/ECB/PKCS1Padding (1024, 2048)
+ *  RSA/ECB/OAEPWithSHA-1AndMGF1Padding (1024, 2048)
+ *  RSA/ECB/OAEPWithSHA-256AndMGF1Padding (1024, 2048)
+
  * @see <a href="http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation">Block_cipher_mode_of_operation</a>
  *
  */
@@ -73,39 +84,20 @@ public final class EncryptionPaddingDemo {
     private static final Logger logger = LoggerFactory.getLogger(EncryptionPaddingDemo.class);
 
     public static final String ALGORITHM = "AES";
-    public static final String MODE = "ECB";
-    public static final String PAD = "PKCS7Padding";
 
-    public static final String ALGORITHM_MODE_PAD = "AES/ECB/PKCS7Padding";
-//    public static final String ALGORITHM_MODE_PAD = "AES/CBC/PKCS7Padding";
-//    public static final String ALGORITHM_MODE_PAD = "AES/CTR/NoPadding";
+    public byte[] encryptSecretKeySpec(final byte[] data,
+                                       final byte[] keyPass,
+                                       final String algorithmModePad)
+            throws GeneralSecurityException {
 
-    public byte[] encryptSecretKeySpec(final byte[] data, final byte[] keyPass, final String algorithmModePad)
-            throws  NoSuchPaddingException,
-                    NoSuchAlgorithmException,
-                    InvalidKeyException,
-                    BadPaddingException,
-                    IllegalBlockSizeException,
-                    UnsupportedEncodingException {
+        Cipher cipher = Cipher.getInstance(algorithmModePad);
 
-        Cipher cipher = Cipher.getInstance("AES");
-
-        SecretKeySpec AESkeySpec = new SecretKeySpec(keyPass, "AES");
+        SecretKeySpec AESkeySpec = new SecretKeySpec(keyPass, ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, AESkeySpec);
 
-//        cipher.update(s.getBytes(Charset.defaultCharset()));
         cipher.update(data);
 
-        byte[] encryptedData = cipher.doFinal();
-
-        return encryptedData;
+        return cipher.doFinal();
     }
-    /*
-    The update method returns encrypted block. But as I see you take the ciphertext only from doFinal.
-    You supposed to use all blocks from update and from the doFinal for completed encrypted stream of blocks.
 
-    Note: you are using ECB mode, it means each block encrypted independently, it is less secure and should
-    be used only if you know what are you doing. That's why you are able to decrypt the last block (16 bytes for AES)
-    and see truncated plaintext. More info: http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
-     */
-}
+} // The end...

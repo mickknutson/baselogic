@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+
+<script>
+	function ajaxRequest() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+
+//				alert("resonse: " + xhr.responseText)
+				jsonObject = eval("(" + xhr.responseText + ")");
+//				alert("resonse: " + jsonObject)
+
+				var jsonDivId = document.getElementById("json");
+				jsonDivId.innerHTML = "<p>Order number: " + jsonObject.number;
+				jsonDivId.innerHTML += "entryDate: " + jsonObject.entryDate
+						+ "</p>";
+			}
+		}
+		var id = document.forms[0].number.value;
+
+		addr = "http://localhost:8080/jax-rs-demo/jaxrs/order/" + id + "";
+		xhr.open("GET", addr, true);
+		xhr.send();
+	}
+</script>
+
+</head>
+<body>
+
+	<form name="AjaxJSON">
+		<h2>Order Data Entry</h2>
+		<br /> Order Number: <input type="text" name="number" />
+		<!--  Employee name: <input type="text" name="employee" /><br> -->
+
+		<input type="button" value="Submit" onclick="ajaxRequest()" />
+	</form>
+	<div id="json" class="#data_box">json div</div>
+
+	<p>
+		<a href="example">Example Annotated Servlet</a>
+    </p>
+    <p>
+		<a href="jaxrs">REST Order Demo</a>
+	</p>
+
+</body>
+</html>
