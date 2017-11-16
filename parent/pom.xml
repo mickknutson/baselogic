@@ -33,9 +33,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mickknutson/tutorials</url>
-        <connection>scm:git:git://github.com/mickknutson/tutorials.git</connection>
-        <developerConnection>scm:git:git@github.com:mickknutson/tutorials.git</developerConnection>
+        <url>${scm.url}</url>
+        <connection>${scm.connection}</connection>
+        <developerConnection>${scm.developer.connection}</developerConnection>
     </scm>
 
     <distributionManagement>
@@ -84,6 +84,10 @@
         <!--<site.basedir>../</site.basedir>-->
         <!--<site.basedir>${maven.site.path}</site.basedir>-->
         <development.mode>development</development.mode>
+        <scm.connection>scm:git:git@bitbucket.org:mickknutson/trivera_spring.git</scm.connection>
+        <scm.developer.connection>scm:git:git@bitbucket.org:mickknutson/trivera_spring.git</scm.developer.connection>
+        <scm.url>https://bitbucket.org/mickknutson/trivera_spring</scm.url>
+        <project.scm.id>bitbucket-scm-server</project.scm.id>
 
         <!-- Break the fingers of anyone that changes these values -->
         <maven.test.failure.ignore>false</maven.test.failure.ignore>
@@ -91,12 +95,13 @@
 
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.compiler.arguments></java.compiler.arguments>
         <java.test.compiler.arguments>-Xlint:all</java.test.compiler.arguments>
         <jar.addClasspath>false</jar.addClasspath>
-        <server.port>8080</server.port>
+        <server.port>8888</server.port>
 
 
         <!-- Maven plugins ================================================ -->
@@ -109,73 +114,78 @@
         <maven.aspectj.plugin>1.7</maven.aspectj.plugin>-->
 
         <maven.assembly.plugin>2.3</maven.assembly.plugin>
-        <maven.checkstyle.plugin>2.7</maven.checkstyle.plugin>
-        <maven.clean.plugin>2.6</maven.clean.plugin>
+        <maven.clean.plugin>3.0.0</maven.clean.plugin>
+        <maven.checkstyle.plugin>2.17</maven.checkstyle.plugin>
         <maven.cloudfoundry.plugin>1.0.0.M1</maven.cloudfoundry.plugin>
         <maven.cobertura.plugin>2.7</maven.cobertura.plugin>
-        <maven.compiler.plugin>3.3</maven.compiler.plugin>
-        <maven.checkstyle.plugin>2.16</maven.checkstyle.plugin>
+        <maven.compiler.plugin>3.5.1</maven.compiler.plugin>
         <maven.dependency.plugin>2.10</maven.dependency.plugin>
         <maven.deploy.plugin>2.8</maven.deploy.plugin>
         <maven.eclipse.plugin>2.10</maven.eclipse.plugin>
-        <maven.enforcer.plugin>1.4</maven.enforcer.plugin>
-        <maven.exec.plugin>1.2.1</maven.exec.plugin>
-        <maven.failsafe.plugin>2.18.1</maven.failsafe.plugin>
-        <maven.findbugs.plugin>3.0.3-SNAPSHOT</maven.findbugs.plugin>
+        <maven.enforcer.plugin>1.4.1</maven.enforcer.plugin>
+        <maven.exec.plugin>1.4.0</maven.exec.plugin>
+        <maven.failsafe.plugin>2.19.1</maven.failsafe.plugin>
+        <maven.findbugs.plugin>3.0.3</maven.findbugs.plugin>
         <maven.fluido.skin.plugin>1.4</maven.fluido.skin.plugin>
         <maven.groovy.plugin>1.4</maven.groovy.plugin>
         <maven.help.plugin>2.1.1</maven.help.plugin>
         <maven.install.plugin>2.5</maven.install.plugin>
         <maven.jar.plugin>2.6</maven.jar.plugin>
         <maven.javadoc.plugin>2.10.2</maven.javadoc.plugin>
-        <maven.jetty.plugin>9.3.5.v20151012</maven.jetty.plugin>
-        <!--<maven.jetty.plugin>9.3.1-SNAPSHOT</maven.jetty.plugin>-->
-        <!--<maven.jetty.plugin>9.3.1.v20150714</maven.jetty.plugin>-->
+        <maven.jetty.plugin>9.3.6.v20151106</maven.jetty.plugin>
+        <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
         <maven.jxr.plugin>2.5</maven.jxr.plugin>
         <maven.project.info.reports.plugin>2.4</maven.project.info.reports.plugin>
-        <maven.pmd.plugin>3.5</maven.pmd.plugin>
-        <maven.release.plugin>2.4</maven.release.plugin>
-        <maven.resources.plugin>2.6</maven.resources.plugin>
-        <maven.site.plugin>3.4</maven.site.plugin>
+        <maven.properties.plugin>1.0.0</maven.properties.plugin>
+        <maven.pmd.plugin>3.6</maven.pmd.plugin>
+        <maven.release.plugin>2.5.3</maven.release.plugin>
+        <maven.resources.plugin>2.7</maven.resources.plugin>
+        <maven.scm.plugin>1.9.4</maven.scm.plugin>
+        <maven.site.plugin>3.5.1</maven.site.plugin>
         <maven.soapui.plugin>4.0.1</maven.soapui.plugin>
         <maven.sonar.plugin>2.12</maven.sonar.plugin>
-        <maven.source.plugin>2.4</maven.source.plugin>
-        <maven.surefire.plugin>2.18.1</maven.surefire.plugin>
+        <maven.source.plugin>3.0.0</maven.source.plugin>
+        <maven.surefire.plugin>2.19.1</maven.surefire.plugin>
         <maven.taglist.plugin>2.4</maven.taglist.plugin>
         <maven.tomcat.plugin>2.2</maven.tomcat.plugin>
         <maven.version.range>[2.2.1,3.3.3)</maven.version.range>
         <maven.versions.plugin>2.2</maven.versions.plugin>
-        <maven.war.plugin>2.4</maven.war.plugin>
+        <maven.war.plugin>2.6</maven.war.plugin>
 
         <wagon_ssh.version>2.2</wagon_ssh.version>
         <github.version>0.7</github.version>
 
 
+        <!-- SPRING MODULES -->
+        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.boot.version>1.3.3.RELEASE</spring.boot.version>
+        <spring.batch.version>3.0.7.RELEASE</spring.batch.version>
+        <spring.data-jpa.version>1.10.1.RELEASE</spring.data-jpa.version>
+        <spring.security.version>4.0.4.RELEASE</spring.security.version>
+        <spring.integration.version>4.1.2.RELEASE</spring.integration.version>
+
+
+
         <!-- NEED TO ALPHABETIZE -->
 
-        <slf4j.version>1.7.12</slf4j.version>
-
-        <spring.version>4.2.2.RELEASE</spring.version>
-        <spring.boot.version>1.2.7.RELEASE</spring.boot.version>
-        <spring.data-jpa.version>1.9.0.RELEASE</spring.data-jpa.version>
-        <spring.security.version>4.0.3.RELEASE</spring.security.version>
-        <spring.integration.version>4.1.2.RELEASE</spring.integration.version>
-        <spring.batch.version>4.1.2.RELEASE</spring.batch.version>
-
-
-
         <activemq.version>5.7.0</activemq.version>
-        <aspectj.version>1.8.6</aspectj.version>
+        <activemq.all.version>5.13.2</activemq.all.version>
+        <aspectj.version>1.8.8</aspectj.version>
+        <assertj.version>2.4.1</assertj.version><!-- use 3.2.0 for Java 8 projects -->
 
-        <cglib.version>3.1</cglib.version>
+        <cglib.version>3.2.1</cglib.version>
 
+        <cobertura.haltOnFailure>true</cobertura.haltOnFailure>
         <cobertura.branchRate>85</cobertura.branchRate>
         <cobertura.lineRate>95</cobertura.lineRate>
-        <cobertura.haltOnFailure>true</cobertura.haltOnFailure>
         <cobertura.totalBranchRate>85</cobertura.totalBranchRate>
         <cobertura.totalLineRate>95</cobertura.totalLineRate>
         <cobertura.packageLineRate>100</cobertura.packageLineRate>
         <cobertura.packageBranchRate>100</cobertura.packageBranchRate>
+
+        <!--<cobertura.ignore>com.example.boringcode.*</cobertura.ignore>-->
+        <cobertura.ignore>*.domain.*</cobertura.ignore>
+        <cobertura.exclude>com/example/dullcode/**/*.class</cobertura.exclude>
 
 
         <!-- Commons -->
@@ -184,35 +194,36 @@
         <commons_lang.version>2.6</commons_lang.version>
         <commons_lang3.version>3.4</commons_lang3.version>
         <commons_dbcp.version>1.4</commons_dbcp.version>
-        <commons.dbcp2.version>2.1</commons.dbcp2.version>
-        <commons_io.version>2.4</commons_io.version>
-        <commons_httpclient.version>4.4.1</commons_httpclient.version>
+        <commons.dbcp2.version>2.1.1</commons.dbcp2.version>
+        <commons_io.version>2.5</commons_io.version>
+        <commons_httpclient.version>4.5.1</commons_httpclient.version>
 
         <cucumber.version>1.2.4</cucumber.version>
 
-        <derby.version>10.11.1.1</derby.version>
+        <derby.version>10.12.1.1</derby.version>
 
-        <ehcache.version>2.10.0</ehcache.version>
+        <ehcache.version>2.10.2</ehcache.version>
+        <org.ehcache.version>3.0.0.m5</org.ehcache.version>
+        <org.ehcache.jcache.version>1.0.1</org.ehcache.jcache.version>
 
-        <groovy.version>2.4.3</groovy.version>
-        <guava.version>18.0</guava.version>
+        <groovy.version>2.4.5</groovy.version>
+        <guava.version>19.0</guava.version>
 
         <hamcrest.version>1.3</hamcrest.version>
 
         <hikaricp-java6.version>2.3.8</hikaricp-java6.version>
 
         <!-- Hibernate / JPA -->
-        <hibernate.version>5.0.3.Final</hibernate.version>
-        <!--<hibernate.version>4.3.9.Final</hibernate.version>-->
-        <!--<hibernate.version>3.6.0.Final</hibernate.version>-->
-        <!--<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>-->
-        <hibernate.validator.version>5.2.2.Final</hibernate.validator.version>
+        <hibernate.version>5.1.0.Final</hibernate.version>
+        <hibernate.validator.version>5.2.3.Final</hibernate.validator.version>
 
-        <h2.version>1.4.177</h2.version>
+        <h2.version>1.4.178</h2.version>
 
         <javax.validation.version>1.1.0.Final</javax.validation.version>
+        <javax.cache.version>1.0.0</javax.cache.version>
         <javax.cdi.version>1.1-PRD</javax.cdi.version>
         <javax.inject.version>1</javax.inject.version>
+
         <!-- use 3.0.1 for Tomcat 7 or Java EE 6 (i.e. Glassfish 3.x) -->
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <javax.servlet.jsp.version>2.2</javax.servlet.jsp.version>
@@ -222,12 +233,14 @@
         <jaxrs.version>2.0.1</jaxrs.version>
         <jersey.version>2.2.12</jersey.version>
 
-        <joda.version>2.8.2</joda.version>
+        <joda.version>2.9.1</joda.version>
+
+        <jsr250.version>1.0</jsr250.version>
 
         <junit.version>4.12</junit.version>
         <junit.argLine>-Xmx1024m</junit.argLine>
         <junit.enableAssertions>true</junit.enableAssertions>
-        <junit.failIfNoTests>true</junit.failIfNoTests>
+        <junit.failIfNoTests>false</junit.failIfNoTests>
         <!-- [WARNING] The parameter forkMode is deprecated since version 2.14. Use forkCount and reuseForks instead.-->
         <junit.forkCount>50</junit.forkCount>
         <junit.reuseForks>true</junit.reuseForks>
@@ -241,33 +254,35 @@
         <skipTests>${skip.tests}</skipTests>
         <junit.threadCount>50</junit.threadCount>
         <junit.useUnlimitedThreads>true</junit.useUnlimitedThreads>
+
         <junit.useSystemClassLoader>false</junit.useSystemClassLoader>
 
         <log4j.version>1.2.17</log4j.version>
-        <logback.version>1.1.3</logback.version>
-
+        <logback.version>1.1.5</logback.version>
 
         <mockito.version>2.0.2-beta</mockito.version>
-        <powermock.version>1.6.2</powermock.version>
+
+        <poi.version>3.14</poi.version>
+
+        <powermock.version>1.6.4</powermock.version>
 
         <reflections.version>0.9.10</reflections.version>
+        <selenium.version>2.53.0</selenium.version>
+        <slf4j.version>1.7.14</slf4j.version>
 
-        <selenium.version>2.47.1</selenium.version>
+        <serenity.version>1.1.31</serenity.version>
+        <serenity.cucumber.version>1.1.6</serenity.cucumber.version>
+        <serenity.jbehave.version>1.9.0</serenity.jbehave.version>
+        <serenity.plugin.version>1.1.31</serenity.plugin.version>
 
         <taglibs.standard.version>1.1.2</taglibs.standard.version>
-
-        <serenity.version>1.1.3</serenity.version>
-        <serenity.jbehave.version>1.1.0</serenity.jbehave.version>
-
-        <!--<serenity.plugin.version>1.0.47</serenity.plugin.version>-->
-        <serenity.plugin.version>1.1.3</serenity.plugin.version>
 
 
         <tomcat.servlet.version>7.0.57</tomcat.servlet.version>
 
         <wink.version>1.4</wink.version>
 
-        <yaml.version>1.16</yaml.version>
+        <yaml.version>1.17</yaml.version>
 
 
         <!-- Webdriver ===================================================== -->
@@ -278,8 +293,8 @@
         <jbehave.core.version>4.0</jbehave.core.version>
         <jbehave.web.version>3.5.1</jbehave.web.version>
         <jbehave.site.version>3.1.1</jbehave.site.version>
+
         <fluent.selenium.version>1.5.1</fluent.selenium.version>
-        <stories>**/EtsyDotComStories.java</stories>
 
     </properties>
 
@@ -303,6 +318,21 @@
                 <maven.test.skip>false</maven.test.skip>
             </properties>
         </profile>
+        <!--<profile>
+            <id>jdk-1.7</id>
+
+            <activation>
+                <property>
+                    <name>target-jvm</name>
+                    <value>7</value>
+                </property>
+            </activation>
+            <properties>
+                <java.source.version>1.7</java.source.version>
+                <java.target.version>1.7</java.target.version>
+            </properties>
+        </profile>-->
+
     </profiles>
 
 
@@ -441,6 +471,27 @@
                 <version>${spring.security.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>jsr250-api</artifactId>
+                <version>${jsr250.version}</version>
+            </dependency>
+
+
+            <!-- Spring Batch -->
+            <dependency>
+                <groupId>org.springframework.batch</groupId>
+                <artifactId>spring-batch-core</artifactId>
+                <version>${spring.batch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.batch</groupId>
+                <artifactId>spring-batch-infrastructure</artifactId>
+                <version>${spring.batch.version}</version>
+            </dependency>
+
+
 
 
             <!-- AspectJ -->
@@ -506,10 +557,29 @@
                 <version>${commons_io.version}</version>
             </dependency>
 
+            <!-- Cache providers -->
+            <!-- Legacy EHcache -->
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
+            </dependency>
+
+            <!-- new org.EHCache -->
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${org.ehcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>jcache</artifactId>
+                <version>${org.ehcache.jcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.cache</groupId>
+                <artifactId>cache-api</artifactId>
+                <version>${javax.cache.version}</version>
             </dependency>
 
             <dependency>
@@ -523,6 +593,13 @@
                 <artifactId>joda-time</artifactId>
                 <version>${joda.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.yaml</groupId>
@@ -757,11 +834,37 @@
                 <artifactId>spring-jms</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-core</artifactId>
                 <version>${activemq.version}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-all</artifactId>
+                <version>${activemq.all.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-spring</artifactId>
+                <version>${activemq.all.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+
+
 
             <!-- Test -->
             <dependency>
@@ -781,7 +884,13 @@
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.1.0</version>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-db</artifactId>
+                <version>${assertj.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -820,10 +929,16 @@
 
             <dependency>
                 <groupId>info.cukes</groupId>
-                <artifactId>cucumber-java8</artifactId>
+                <artifactId>cucumber-java</artifactId>
                 <version>${cucumber.version}</version>
                 <scope>test</scope>
             </dependency>
+            <!--<dependency>
+                <groupId>info.cukes</groupId>
+                <artifactId>cucumber-java8</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>-->
 
             <!--
             ./src/test/groovy
@@ -838,12 +953,12 @@
 
             <!--=== dependencyManagement =======================================-->
 
-            <!--<dependency>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven.javadoc.plugin}</version>
-            </dependency>-->
-
+            <!-- Selenium / Web Driver -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
@@ -885,6 +1000,46 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-safari-driver</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-ie-driver</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-lang</groupId>
+                        <artifactId>commons-lang</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
 
             <!-- thucydides was renamed to serenity... -->
@@ -897,6 +1052,10 @@
                     <exclusion>
                         <groupId>commons-logging</groupId>
                         <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-digester</groupId>
+                        <artifactId>commons-digester</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -926,11 +1085,27 @@
                 </exclusions>
             </dependency>
 
+            <!--
+            http://mvnrepository.com/artifact/net.serenity-bdd/serenity-jbehave
+            -->
             <dependency>
                 <groupId>net.serenity-bdd</groupId>
                 <artifactId>serenity-jbehave</artifactId>
                 <version>${serenity.jbehave.version}</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Serenity Cucumber-JVM -->
+            <dependency>
+                <groupId>net.serenity-bdd</groupId>
+                <artifactId>serenity-cucumber</artifactId>
+                <version>${serenity.cucumber.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-logging</groupId>
@@ -1064,10 +1239,10 @@
             <artifactId>hamcrest-all</artifactId>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-        </dependency>-->
+        </dependency>
 
 
         <!-- Only used for Spring projects -->
@@ -1091,10 +1266,30 @@
         </dependency>
 
 
+        <!-- Selenium -->
         <!--<dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>core</artifactId>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-safari-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-ie-driver</artifactId>
         </dependency>-->
+
+        <!-- Serenity -->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
@@ -1110,6 +1305,10 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jbehave</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
         </dependency>
 
 
@@ -1132,8 +1331,8 @@
             <plugins>
 
                 <!--
-                == ActiveMQ
-                == url: XXX
+                ActiveMQ
+                url: XXX
                 -->
                 <plugin>
                     <groupId>org.apache.activemq.tooling</groupId>
@@ -1143,16 +1342,21 @@
                         <configUri>vm://localhost</configUri>
                     </configuration>-->
                     <executions>
-                        <execution>
+                        <!--<execution>
                             <goals>
                                 <goal>run</goal>
                             </goals>
                             <phase>process-test-classes</phase>
-                        </execution>
+                        </execution>-->
                     </executions>
                 </plugin>
 
 
+                <!--
+                https://maven.apache.org/plugins/maven-antrun-plugin/
+                Run specific Ant Tasks.
+                This config only creates a version.properties file.
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
@@ -1185,6 +1389,8 @@
 
                 <!--
                 http://maven.apache.org/components/plugins/maven-checkstyle-plugin/usage.html
+                Run: mvn clean checkstyle:checkstyle
+                Report: ${build.outputDirectory}/site/checkstyle.html
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1195,8 +1401,10 @@
                             <id>validate</id>
                             <phase>package</phase>
                             <configuration>
-                                <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>
-                                <!--<configLocation>./google_checks.xml</configLocation>-->
+                                <!--<configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>-->
+                                <!--<configLocation>sun_checks.xml</configLocation>-->
+                                <!--<configLocation>src/test/resources/google_checks.xml</configLocation>-->
+                                <configLocation>google_checks.xml</configLocation>
                                 <encoding>UTF-8</encoding>
                                 <consoleOutput>false</consoleOutput>
                                 <failsOnError>false</failsOnError>
@@ -1212,6 +1420,8 @@
 
                 <!--
                 http://www.mojohaus.org/cobertura-maven-plugin/
+                Run: mvn clean cobertura:cobertura
+                Report: ${build.outputDirectory}/site/cobertura/index.html
                 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -1246,11 +1456,11 @@
                         </check>
                         <instrumentation>
                             <ignores>
-                                <ignore>com.example.boringcode.*</ignore>
+                                <ignore>${cobertura.ignore}</ignore>
                             </ignores>
                             <excludes>
-                                <exclude>com/example/dullcode/**/*.class</exclude>
-                                <exclude>com/example/**/*Test.class</exclude>
+                                <exclude>${cobertura.exclude}</exclude>
+                                <exclude>com/**/*Tests.class</exclude>
                             </excludes>
                         </instrumentation>
                     </configuration>
@@ -1265,7 +1475,7 @@
                 </plugin>
 
                 <!--
-                == http://maven.apache.org/plugins/maven-compiler-plugin/
+                http://maven.apache.org/plugins/maven-compiler-plugin/
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1322,7 +1532,11 @@
 
                 <!--
                 https://maven.apache.org/plugins/maven-eclipse-plugin/
-                Similar to M2Eclipse plugin, but used for Maven.
+                Helps create eclipse project details from an existing pom.xml
+
+                Force maven to download source and javaDocs:
+                mvn dependency:sources
+                mvn dependency:resolve -Dclassifier=javadoc
                 -->
                 <plugin>
                     <artifactId>maven-eclipse-plugin</artifactId>
@@ -1371,9 +1585,9 @@
                                     <!--<requireMavenVersion>
                                         <version>${maven.version.range}</version>
                                     </requireMavenVersion>-->
-                                    <requireJavaVersion>
+                                    <!--<requireJavaVersion>
                                         <version>${java.source.version}</version>
-                                    </requireJavaVersion>
+                                    </requireJavaVersion>-->
                                 </rules>
                                 <fail>true</fail>
                             </configuration>
@@ -1382,8 +1596,45 @@
                 </plugin>
 
                 <!--
+                The plugin provides 2 goals to help execute system and Java programs.
+                http://www.mojohaus.org/exec-maven-plugin/
+                Run simple:
+                    mvn test
+                Run:
+                    mvn exec:exec -Dexec.executable="maven" [-Dexec.workingdir="/tmp"] -Dexec.args="-X myproject:dist"
+
+                -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${maven.exec.plugin}</version>
+                    <executions>
+                        <execution>
+                            <!--<phase>test</phase>-->
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                            <!--<configuration>
+                                <mainClass>com.springclass.tests.TestClient</mainClass>  
+                            </configuration>-->
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <executable>com.springclass.tests.TestClient</executable>
+                        <!-- optional -->
+                        <!--<workingDirectory>/tmp</workingDirectory>
+                        <arguments>
+                            <argument>-X</argument>
+                            <argument>myproject:dist</argument>
+                        </arguments>-->
+                    </configuration>
+                </plugin>
+
+                <!--
                 Running integration and functional tests
                 https://maven.apache.org/surefire/maven-failsafe-plugin/
+
+                keep an eye on: https://github.com/amertum/cobertura-it-maven-plugin
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1391,13 +1642,20 @@
                     <version>${maven.failsafe.plugin}</version>
                     <configuration>
                         <includes>
-                            <include>**/When*.java</include>
+                            <include>**/features/**/When*.java</include>
+                            <include>**/cucumber/**/*.java</include>
                             <include>**/features/**/*.java</include>
+                            <include>**/webdriver/**/*.java</include>
                         </includes>
-                        <systemProperties>
+                        <systemPropertyVariables>
                             <webdriver.driver>${webdriver.driver}</webdriver.driver>
                             <surefire.rerunFailingTestsCount>${surefire.rerunFailingTestsCount}</surefire.rerunFailingTestsCount>
-                        </systemProperties>
+                            <server.port>${server.port}</server.port>
+
+                            <!-- Serenity Settings -->
+                            <!-- Need to look at https://wiki.jenkins-ci.org/display/JENKINS/Serenity+Plugin -->
+                            <serenity.browser.width>1200</serenity.browser.width>
+                        </systemPropertyVariables>
                     </configuration>
                     <executions>
                         <execution>
@@ -1411,24 +1669,41 @@
 
                 <!--
                 Findbugs static analysis
-                url...
+                http://gleclaire.github.io/findbugs-maven-plugin/usage.html
+                Run: mvn findbugs:check
+                Run GUI: mvn findbugs:gui
+                Report: ${build.outputDirectory}/site/findbugs/index.html
                 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>${maven.findbugs.plugin}</version>
                     <configuration>
+                        <xmlOutput>true</xmlOutput>
+
+                        <!--<visitors>FindDeadLocalStores,UnreadFields</visitors>-->
                         <effort>Max</effort>
                         <threshold>Low</threshold>
-                        <xmlOutput>true</xmlOutput>
                     </configuration>
-                    <!--<executions>
+                    <executions>
                         <execution>
                             <goals>
-                                <goal>check</goal>
+                                <!--<goal>check</goal>-->
                             </goals>
                         </execution>
-                    </executions>-->
+                    </executions>
+                </plugin>
+
+                <!--
+                This plugin produces a nicely formatted metrics report based on your project.
+                http://www.mojohaus.org/jdepend-maven-plugin/
+                Run: mvn jdepend:generate
+                Report: ${build.outputDirectory}/site/jdepend/index.html
+                -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>${maven.jdepend.plugin}</version>
                 </plugin>
 
                 <!--
@@ -1459,11 +1734,10 @@
 
 
                 <!--
-                jBehave
-                -->
-
-                <!--
                 https://maven.apache.org/plugins/maven-pmd-plugin/
+                Run: mvn pmd:pmd
+                Run: mvn pmd:cpd
+                Report: ${build.outputDirectory}/site/pmd/index.html
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1471,18 +1745,56 @@
                     <version>${maven.pmd.plugin}</version>
                     <configuration>
                         <verbose>true</verbose>
-                        <!--<includes>
-                            <include>src/main/java/**/*.java</include>
-                        </includes>-->
-                        <!--<rulesets>
-                            <ruleset>${project.basedir}/src/main/resources/properties/pmd_workspace.xml</ruleset>
-                        </rulesets>-->
+                        <linkXref>true</linkXref>
+                        <sourceEncoding>utf-8</sourceEncoding>
+                        <!--<minimumTokens>50</minimumTokens>-->
+                        <targetJdk>${java.target.version}</targetJdk>
+                        <includes>
+                            <include>**/*.java</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/*Bean.java</exclude>
+                            <exclude>**/generated/*.java</exclude>
+                        </excludes>
+                        <excludeRoots>
+                            <excludeRoot>target/generated-sources</excludeRoot>
+                        </excludeRoots>
+                        <rulesets>
+
+                            <ruleset>/rulesets/java/android.xml</ruleset>
+                            <ruleset>/rulesets/java/basic.xml</ruleset>
+                            <ruleset>/rulesets/java/braces.xml</ruleset>
+                            <ruleset>/rulesets/java/clone.xml</ruleset>
+                            <ruleset>/rulesets/java/codesize.xml</ruleset>
+                            <ruleset>/rulesets/java/comments.xml</ruleset>
+                            <ruleset>/rulesets/java/controversial.xml</ruleset>
+                            <ruleset>/rulesets/java/coupling.xml</ruleset>
+                            <ruleset>/rulesets/java/design.xml</ruleset>
+                            <ruleset>/rulesets/java/empty.xml</ruleset>
+                            <ruleset>/rulesets/java/finalizers.xml</ruleset>
+                            <!--<ruleset>/rulesets/java/imports.xml</ruleset>-->
+                            <ruleset>/rulesets/java/j2ee.xml</ruleset>
+                            <ruleset>/rulesets/java/javabeans.xml</ruleset>
+                            <ruleset>/rulesets/java/junit.xml</ruleset>
+                            <ruleset>/rulesets/java/logging-jakarta-commons.xml</ruleset>
+                            <ruleset>/rulesets/java/logging-java.xml</ruleset>
+                            <ruleset>/rulesets/java/migrating.xml</ruleset>
+                            <ruleset>/rulesets/java/naming.xml</ruleset>
+                            <ruleset>/rulesets/java/optimizations.xml</ruleset>
+                            <ruleset>/rulesets/java/strictexception.xml</ruleset>
+                            <ruleset>/rulesets/java/strings.xml</ruleset>
+                            <ruleset>/rulesets/java/sunsecure.xml</ruleset>
+                            <ruleset>/rulesets/java/typeresolution.xml</ruleset>
+                            <ruleset>/rulesets/java/unnecessary.xml</ruleset>
+                            <ruleset>/rulesets/java/unusedcode.xml</ruleset>
+                        </rulesets>
                     </configuration>
                     <executions>
                         <execution>
-                            <phase>package</phase>
+                            <!--<phase>package</phase>-->
                             <goals>
                                 <goal>pmd</goal>
+                                <goal>cpd</goal>
                                 <!--<goal>check</goal>-->
                                 <!--<goal>cpd-check</goal>-->
                             </goals>
@@ -1490,7 +1802,64 @@
                     </executions>
                 </plugin>
 
+
                 <!--
+                http://www.mojohaus.org/properties-maven-plugin/
+                -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>properties-maven-plugin</artifactId>
+                    <version>${maven.properties.plugin}</version>
+                    <executions>
+                        <execution>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>read-project-properties</goal>
+                            </goals>
+                            <configuration>
+                                <urls>
+                                    <url>classpath:env-properties.properties</url>
+                                    <!--<url>file:///${env.HOME}/mydev.properties</url>-->
+                                </urls>
+                                <!--
+                                [ERROR] Failed to execute goal org.codehaus.mojo:properties-maven-plugin:1.0.0:read-project-properties (default) on project studentWork:
+                                Set files or URLs but not both - otherwise no order of precedence can be guaranteed -> [Help 1]
+                                <files>
+                                    <file>etc/config/dev.properties</file>
+                                </files>-->
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!--
+                This plugin is used to release a project with Maven, saving a lot of repetitive, manual work.
+                Releasing a project is made in two steps: 'prepare' and 'perform'.
+                http://maven.apache.org/maven-release/maven-release-plugin/index.html
+                TODO: See: http://stackoverflow.com/questions/29566378/maven-release-plugin-and-multiple-projects-in-separate-git-repositories-with-jen
+                TODO: See: https://jazz.net/forum/questions/170646/any-clear-step-by-step-example-of-how-to-use-the-maven-release-plugin-with-the-jazz-scm-provider
+
+
+                -Pall-modules
+
+                Run: mvn release:prepare -DdryRun=true
+                Run: mvn perform -DdryRun=true
+                Run: mvn release:branch -DbranchName=1.0.0 -DdryRun=true
+
+                mvn -B -f /var/lib/hudson/jobs/project-impl/workspace/pom.xml \
+                -DdevelopmentVersion=1.2-SNAPSHOT -DreleaseVersion=1.1 \
+                -Dtag=1.1 -Dresume=false release:prepare release:perform \
+                -DpreparationGoals=clean install -e
+                -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven.release.plugin}</version>
+                </plugin>
+
+
+                <!--
+                The Resources Plugin handles the copying of project resources to the output directory.
                 http://maven.apache.org/plugins/maven-resources-plugin/
                 -->
                 <plugin>
@@ -1525,6 +1894,7 @@
                 </plugin>
 
                 <!--
+                Execute Serenity BDD test cases
                 https://github.com/serenity-bdd/serenity-maven-plugin
                 http://mvnrepository.com/artifact/net.serenity-bdd.maven.plugins/serenity-maven-plugin
                 -->
@@ -1540,13 +1910,13 @@
                         </dependency>
                     </dependencies>
                     <executions>
-                        <execution>
+                        <!--<execution>
                             <id>serenity-reports</id>
                             <phase>post-integration-test</phase>
                             <goals>
                                 <goal>aggregate</goal>
                             </goals>
-                        </execution>
+                        </execution>-->
                     </executions>
                 </plugin>
 
@@ -1577,12 +1947,16 @@
                 ======================================
                 mvn clean tomcat7:deploy -e
 
+                mvn clean verify -Dserver.port=8888
+
                 -->
                 <plugin>
                     <groupId>org.apache.tomcat.maven</groupId>
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>${maven.tomcat.plugin}</version>
-                    <!--<configuration>
+                    <inherited>true</inherited>
+                    <!-- For deployment to remote Tomcat installation:
+                    <configuration>
                         <url>http://localhost:8080/manager/html</url>
                         <server>tomcat7Server</server>
                         <update>true</update>
@@ -1616,10 +1990,10 @@
                     <executions>
                         <execution>
                             <id>tomcat-run</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>exec-war-only</goal>
                             </goals>
-                            <phase>package</phase>
                             <configuration>
                                 <!-- http port -->
                                 <port>${server.port}</port>
@@ -1657,10 +2031,10 @@
                     <executions>
                         <execution>
                             <id>tomcat-run</id>
+                            <phase>package</phase>
                             <goals>
                                 <goal>exec-war-only</goal>
                             </goals>
-                            <phase>package</phase>
                             <configuration>
                                 <!-- http port -->
                                 <port>${server.port}</port>
@@ -1719,7 +2093,10 @@
                 </plugin>-->
 
                 <!--
+                Create Site project documentation
                 http://maven.apache.org/plugins/maven-site-plugin/index.html
+                Run: mvn site:site
+                Report: ${build.outputDirectory}/site/index.html
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1734,7 +2111,10 @@
                     </dependencies>
                 </plugin>
 
-                <!-- https://github.com/github/maven-plugins -->
+                <!--
+                Upload project artifacts and documentation to GitHub
+                https://github.com/github/maven-plugins
+                -->
                 <plugin>
                     <groupId>com.github.github</groupId>
                     <artifactId>site-maven-plugin</artifactId>
@@ -1758,6 +2138,7 @@
                 </plugin>
 
                 <!--
+                Sonor plugin for Maven build statistics
                 http://docs.sonarqube.org/display/SONAR/Documentation
                 -->
                 <!--<plugin>
@@ -1768,6 +2149,7 @@
 
 
                 <!--
+                The Source Plugin creates a jar archive of the source files of the current project.
                 https://maven.apache.org/plugins/maven-source-plugin/index.html
                 -->
                 <plugin>
@@ -1787,7 +2169,10 @@
 
 
                 <!--
+                Running unit tests, not integration or functional tests.
                 https://maven.apache.org/surefire/maven-surefire-plugin/
+                Run: mvn clean test
+                Report: ${build.outputDirectory}/surefire-reports/
                 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1816,22 +2201,30 @@
                         <includes>
                             <include>**/*Test.java</include>
                             <include>**/*Tests.java</include>
+                            <include>**/TestClient.java</include>
                             <!-- <include>**/*Stories.java</include> -->
                         </includes>
                         <excludes>
+                            <exclude>**/When*.java</exclude>
+                            <exclude>**/features/**/*.java</exclude>
+                            <exclude>**/webdriver/**/*.java</exclude>
+
                             <exclude>**/Abstract*.java</exclude>
                         </excludes>
 
-                        <systemPropertyVariables>
+                        <systemPropertyVariables combine.children="append">
                             <webdriver.driver>${webdriver.driver}</webdriver.driver>
+                            <surefire.rerunFailingTestsCount>${surefire.rerunFailingTestsCount}</surefire.rerunFailingTestsCount>
                             <serenity.browser.width>1200</serenity.browser.width>
+                            <server.port>${server.port}</server.port>
                         </systemPropertyVariables>
-
                     </configuration>
                 </plugin>
 
                 <!--
                 http://www.mojohaus.org/taglist-maven-plugin/index.html
+                Run: mvn taglist:taglist
+                Report: ${build.outputDirectory}/taglist/
                 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -1840,11 +2233,11 @@
                 </plugin>
 
                 <!--
-                == versions-maven-plugin
-                == http://www.mojohaus.org/versions-maven-plugin/
-                ==
-                == mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
-                 -->
+                The Versions Plugin is used when you want to manage the versions of artifacts in a project's POM.
+                http://www.mojohaus.org/versions-maven-plugin/
+
+                mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
+                -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
@@ -1856,6 +2249,12 @@
                     </configuration>
                 </plugin>
 
+                <!--
+                The WAR Plugin is responsible for collecting all artifact dependencies,
+                classes and resources of the web application and packaging them into a web application archive.
+
+                https://maven.apache.org/plugins/maven-war-plugin/
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
@@ -1918,9 +2317,9 @@
                 <artifactId>maven-dependency-plugin</artifactId>
             </plugin>
 
-            <!--<plugin>
+            <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
-            </plugin>-->
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -1972,10 +2371,10 @@
                 <artifactId>site-maven-plugin</artifactId>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -2012,10 +2411,20 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven.checkstyle.plugin}</version>
                 <configuration>
+                    <!--<configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/18f6ebbcad23e88e3ae30fc79be464b8b7772a0d/google_checks.xml</configLocation>-->
+                    <configLocation>google_checks.xml</configLocation>
+                    <!--<configLocation>google_checks.xml</configLocation>-->
                     <!--<configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/google_checks.xml</configLocation>-->
                 </configuration>
                 <reportSets>
-                    <reportSet>
+                    <reportSet><!-- by default, id = "default" -->
+                        <reports><!-- select non-aggregate reports -->
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet><!-- aggregate reportSet, to define in poms having modules -->
+                        <id>aggregate</id>
+                        <inherited>false</inherited><!-- don't run aggregate in child modules -->
                         <reports>
                             <report>checkstyle</report>
                         </reports>
@@ -2045,52 +2454,57 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
 
-            <!--
-            http://gleclaire.github.io/findbugs-maven-plugin/
-            -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${maven.findbugs.plugin}</version>
-                <configuration>
-                    <xmlOutput>true</xmlOutput>
-                    <!-- Optional directory to put findbugs xdoc xml report -->
-                    <!--<xmlOutputDirectory>target/site</xmlOutputDirectory>-->
-
-                    <!--<visitors>FindDeadLocalStores,UnreadFields</visitors>
-                    <effort>Max</effort>
-                    <threshold>Low</threshold>-->
-                </configuration>
             </plugin>
 
-            <!--
-            https://maven.apache.org/plugins/maven-pmd-plugin/
-            -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${maven.pmd.plugin}</version>
                 <configuration>
+                    <verbose>true</verbose>
                     <linkXref>true</linkXref>
                     <sourceEncoding>utf-8</sourceEncoding>
-                    <minimumTokens>50</minimumTokens>
+                    <!--<minimumTokens>50</minimumTokens>-->
                     <targetJdk>${java.target.version}</targetJdk>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
                         <exclude>**/generated/*.java</exclude>
                     </excludes>
                     <excludeRoots>
-                        <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                        <excludeRoot>target/generated-sources</excludeRoot>
                     </excludeRoots>
                     <rulesets>
-                        <!-- Two rule sets that come bundled with PMD -->
-                        <ruleset>/rulesets/java/braces.xml</ruleset>
+                        <ruleset>/rulesets/java/android.xml</ruleset>
                         <ruleset>/rulesets/java/basic.xml</ruleset>
+                        <ruleset>/rulesets/java/braces.xml</ruleset>
+                        <ruleset>/rulesets/java/clone.xml</ruleset>
+                        <ruleset>/rulesets/java/codesize.xml</ruleset>
+                        <ruleset>/rulesets/java/comments.xml</ruleset>
+                        <ruleset>/rulesets/java/controversial.xml</ruleset>
                         <ruleset>/rulesets/java/coupling.xml</ruleset>
                         <ruleset>/rulesets/java/design.xml</ruleset>
+                        <ruleset>/rulesets/java/empty.xml</ruleset>
+                        <ruleset>/rulesets/java/finalizers.xml</ruleset>
+                        <ruleset>/rulesets/java/imports.xml</ruleset>
+                        <ruleset>/rulesets/java/j2ee.xml</ruleset>
                         <ruleset>/rulesets/java/javabeans.xml</ruleset>
                         <ruleset>/rulesets/java/junit.xml</ruleset>
+                        <ruleset>/rulesets/java/logging-jakarta-commons.xml</ruleset>
+                        <ruleset>/rulesets/java/logging-java.xml</ruleset>
+                        <ruleset>/rulesets/java/migrating.xml</ruleset>
                         <ruleset>/rulesets/java/naming.xml</ruleset>
+                        <ruleset>/rulesets/java/optimizations.xml</ruleset>
+                        <ruleset>/rulesets/java/strictexception.xml</ruleset>
+                        <ruleset>/rulesets/java/strings.xml</ruleset>
+                        <ruleset>/rulesets/java/sunsecure.xml</ruleset>
+                        <ruleset>/rulesets/java/typeresolution.xml</ruleset>
                         <ruleset>/rulesets/java/unnecessary.xml</ruleset>
                         <ruleset>/rulesets/java/unusedcode.xml</ruleset>
                     </rulesets>
@@ -2104,8 +2518,22 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven.pmd.plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>pmd</report>
+                            <report>cpd</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>-->
 
-            <!-- at_see yworks
+            <!--
+            at_see yworks
             -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -2140,6 +2568,19 @@
 
                 </configuration>
                 <reportSets>
+                    <reportSet><!-- by default, id = "default" -->
+                        <reports><!-- select non-aggregate reports -->
+                            <report>javadoc</report>
+                            <report>test-javadoc</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet><!-- aggregate reportSet, to define in poms having modules -->
+                        <id>aggregate</id>
+                        <inherited>false</inherited><!-- don't run aggregate in child modules -->
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
                     <reportSet>
                         <id>html</id>
                         <configuration>
@@ -2177,6 +2618,7 @@
                 <reportSets>
                     <reportSet>
                         <id>aggregate</id>
+                        <inherited>false</inherited><!-- don't run aggregate in child modules -->
                         <reports>
                             <report>aggregate</report>
                             <report>test-aggregate</report>
@@ -2253,7 +2695,7 @@
                         <plugin>
                             <groupId>net.serenity-bdd.maven.plugins</groupId>
                             <artifactId>serenity-maven-plugin</artifactId>
-                            <version>[1.0,)</version>
+                            <version>[1.1,)</version>
                         </plugin>
                         <plugin>
                             <groupId>org.codehaus.mojo</groupId>

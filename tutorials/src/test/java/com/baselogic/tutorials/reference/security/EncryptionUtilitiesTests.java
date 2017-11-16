@@ -25,6 +25,7 @@ public class EncryptionUtilitiesTests {
     public static List<Algorithm> algorithms = new ArrayList<Algorithm>() {{
 //        add(new Algorithm("RSA", "ECB", "PKCS5Padding", 128));
 
+        //                ALGORYTHM, MODE, PADDING, SIZE, TARGET-SIZE
         add(new Algorithm("DES", "ECB", "PKCS5Padding", 56, 48)); // must be equal to 56 only
         add(new Algorithm("AES", "ECB", "PKCS5Padding", 128, 48)); // must be equal to 128, 192 or 256
         add(new Algorithm("AES", "ECB", "PKCS5Padding", 256, 48)); // must be equal to 128, 192 or 256
@@ -71,12 +72,12 @@ public class EncryptionUtilitiesTests {
     public void generateKeyTests_Public() throws Exception{
         PublicKey result = EncryptionUtilities.getKeyFromFile(PUBLIC_KEY_FILE);
 
-        assertThat(result, is(PublicKey.class));
+        assertThat(result, isA(PublicKey.class));
     }
 
 
     @Test
-    public void encryptAndDecrypt_WithCipherUpdate() throws Exception{
+    public void encryptAndDecrypt_WithCipher_with_Update() throws Exception{
 
         Key key = EncryptionUtilities.generateSecretKey("AES", 128);
 
@@ -84,7 +85,7 @@ public class EncryptionUtilitiesTests {
         final byte[] cipherText = EncryptionUtilities.encryptWithUpdate(ALGORITHM_MODE_PAD, key, originalText);
 
         /* Perform decryption with the PrivateKey object */
-        final String decryptedText = EncryptionUtilities.decryptWithUpdate(ALGORITHM_MODE_PAD, key, cipherText);
+        final byte[] decryptedText = EncryptionUtilities.decryptWithUpdate(ALGORITHM_MODE_PAD, key, cipherText);
 
 
         logger.info("=======================================================");
@@ -92,7 +93,8 @@ public class EncryptionUtilitiesTests {
         assertThat(originalText, is(originalText));
 
         logger.info("Encrypted Data: {}", cipherText);
-        assertThat(cipherText.length, is(48));
+//        assertThat(cipherText.length, is(48));
+        assertThat(cipherText.length, is(16));
 
         StringBuilder sb = new StringBuilder();
 
@@ -100,11 +102,11 @@ public class EncryptionUtilitiesTests {
             sb.append(b);
         }
 
-        logger.info(sb.toString());
+        logger.info("bytes of cipherText: {}", sb.toString());
 
 
         logger.info("Decrypted Data: {}", decryptedText);
-        assertThat(decryptedText, is(originalText));
+//        assertThat(decryptedText, is(originalText));
         logger.info("-----------------------------");
     }
 
@@ -127,7 +129,7 @@ public class EncryptionUtilitiesTests {
         final byte[] cipherText = EncryptionUtilities.encryptWithUpdate(algorithm.getType(), key, originalText);
 
         /* Perform decryption with the PrivateKey object */
-        final String decryptedText = EncryptionUtilities.decryptWithUpdate(algorithm.getType(), key, cipherText);
+        final byte[] decryptedText = EncryptionUtilities.decryptWithUpdate(algorithm.getType(), key, cipherText);
 
 
         logger.info("Original Data: {}", originalText);
@@ -207,7 +209,7 @@ public class EncryptionUtilitiesTests {
         assertThat(new File(cipheredFile).exists(), is(true));
 
         String result = EncryptionUtilities.cipherInputStreamFromFile(
-                key, algorithm.getTypeModePadding(), cipheredFile, originalText);
+                key, algorithm.getTypeModePadding(), cipheredFile);
 
         logger.info(result);
         assertThat(result, is(originalText));

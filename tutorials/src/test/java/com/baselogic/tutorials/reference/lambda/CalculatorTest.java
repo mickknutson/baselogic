@@ -29,6 +29,60 @@ public class CalculatorTest {
         );
 
         assertThat(result, is(10));
-
     }
-}
+
+    @Test
+    public void test__addition(){
+
+        Integer result = Calculator.calculate(5, 5,
+                Calculator.add
+        );
+
+        assertThat(result, is(10));
+    }
+
+
+    @Test
+    public void test__subtraction(){
+
+        Integer result = Calculator.calculate(64, 46,
+                Calculator.subract
+        );
+
+        assertThat(result, is(18));
+    }
+
+
+    @Test
+    public void test__multiplication(){
+
+        Integer result = Calculator.calculate(5, 5,
+                Calculator.multiply
+        );
+
+        assertThat(result, is(25));
+    }
+
+
+    @Test
+    public void test__division(){
+
+        Integer result = Calculator.calculate(5, 5,
+                Calculator.divide
+        );
+
+        assertThat(result, is(1));
+    }
+
+
+    @Test
+    public void test__modulus(){
+
+        Integer result = Calculator.calculate(10, 6,
+                Calculator.modulus
+        );
+
+        assertThat(result, is(4));
+    }
+
+} // The End...

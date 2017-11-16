@@ -20,7 +20,19 @@ public class DigitalSignatureDemoTests {
     @Test
     public void providerTests() {
 
-        //tbd
+        /* Call the generateDigitalSignature() method of the DigitalSignatureDemo
+         * class to generate a digital signature of the text passed to the
+		 * generateDigitalSignature() method
+		 */
+        DigitalSignatureDemo.generateDigitalSignature("ABB statement.");
+
+
+		/* Call the verifyDigitalSignature() method of the DigitalSignatureDemo
+		 * class to verify a digital signature of the text passed to the
+		 * verifyDigitalSignature() method
+		 */
+        DigitalSignatureDemo.verifyDigitalSignature("ABB statement.");
+
     }
 
     //-----------------------------------------------------------------------//

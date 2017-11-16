@@ -37,20 +37,52 @@ public final class AsymmetricKeyEncryptionDemoTests {
         final PrivateKey privateKey = EncryptionUtilities.getKeyFromFile(AsymmetricKeyEncryptionDemo.PRIVATE_KEY_FILE);
 
         /* Perform encryption with the PublicKey object */
-        final byte[] cipherText = AsymmetricKeyEncryptionDemo.encrypt(originalText, publicKey);
+        final byte[] encryptedText = AsymmetricKeyEncryptionDemo.encrypt(publicKey, originalText);
 
         /* Perform decryption with the PrivateKey object */
-        final String decryptedText = AsymmetricKeyEncryptionDemo.decrypt(cipherText, privateKey);
+        final String decryptedText = AsymmetricKeyEncryptionDemo.decrypt(privateKey, encryptedText);
 
 			/* Print out the original, encrypted, and decrypted data */
         logger.info("Original Data: {}", originalText);
         assertThat(originalText, is(originalText));
 
-        logger.info("Encrypted Data: {}", cipherText);
-        assertThat(cipherText.length, is(256));
+        logger.info("Encrypted Data: {}", encryptedText);
+        assertThat(encryptedText.length, is(256));
 
         logger.info("Decrypted Data: {}", decryptedText);
         assertThat(decryptedText, is(originalText));
+
+    }
+
+    @Test
+    public void test__asymmetricKeyEncryption_with_update() throws Exception {
+        /* Check if key is present */
+
+        if (!AsymmetricKeyEncryptionDemo.areKeysPresent()) {
+            AsymmetricKeyEncryptionDemo.generateKeyAndSaveToFile();
+        }
+
+
+        final PublicKey publicKey = EncryptionUtilities.getKeyFromFile(AsymmetricKeyEncryptionDemo.PUBLIC_KEY_FILE);
+        final PrivateKey privateKey = EncryptionUtilities.getKeyFromFile(AsymmetricKeyEncryptionDemo.PRIVATE_KEY_FILE);
+
+        /* Perform encryption with the PublicKey object */
+        final String[] originalText = {"foo", "bar", "baz"};
+
+        byte[] encryptedText = EncryptionUtilities.encryptWithUpdate("RSA", publicKey, originalText);
+
+        /* Perform decryption with the PrivateKey object */
+//        final String decryptedText = AsymmetricKeyEncryptionDemo.decrypt(privateKey, cipherText);
+//        byte[] decryptedText = EncryptionUtilities.decryptWithUpdate("RSA", privateKey, cipherText);
+        final byte[] decryptedText = EncryptionUtilities.decryptWithUpdate("RSA", privateKey, encryptedText);
+
+			/* Print out the original, encrypted, and decrypted data */
+        logger.info("Original Data: {}", originalText);
+        logger.info("Encrypted Data: {}", encryptedText);
+        assertThat(encryptedText.length, is(256));
+
+        logger.info("Decrypted Data: {}", decryptedText);
+//        assertThat(decryptedText, is(originalText));
 
     }
 

@@ -10,25 +10,30 @@ import java.security.spec.X509EncodedKeySpec;
 
 /**
  * TODO: Need to add the following into the Signatures:
- * MAC
- * SHA-1
- * SHA-2 (256)
- * MD5
+ * TODO: SHA-1
+ * TODO: SHA-2 (256)
+ * TODO: MD5
  */
 public final class DigitalSignatureDemo {
 
 	private static final Logger logger = LoggerFactory.getLogger(DigitalSignatureDemo.class);
 
+    public static final String SIGNATURE_FILE = "target/signature.sig";
+    public static final String SIGNATURE_PUBLIC_KEY_FILE = "target/signature_pub.key";
 
-	public static void main(String[] args) {
 
-		/*Call the generateDigitalSignature() method of the DigitalSignatureDemo class
-		 * to generate a digital signature of the text passed to the generateDigitalSignature() method */
+    public static void main(String[] args) {
+
+        /* Call the generateDigitalSignature() method of the DigitalSignatureDemo
+         * class to generate a digital signature of the text passed to the
+		 * generateDigitalSignature() method
+		 */
 		DigitalSignatureDemo.generateDigitalSignature("ABB statement.");
 
-
-		/*Call the verifyDigitalSignature() method of the DigitalSignatureDemo class
-		 * to verify a digital signature of the text passed to the verifyDigitalSignature() method */
+		/* Call the verifyDigitalSignature() method of the DigitalSignatureDemo
+		 * class to verify a digital signature of the text passed to the
+		 * verifyDigitalSignature() method
+		 */
 		DigitalSignatureDemo.verifyDigitalSignature("ABB statement.");
 	}
 
@@ -37,7 +42,7 @@ public final class DigitalSignatureDemo {
 	 * This method generates a digital signature and saves the digital signature
 	 * along with the public key to the file system
 	 */
-	public static void generateDigitalSignature(String input) {
+	public static void generateDigitalSignature(final String input) {
 		try {
 
 			/* Obtain input text to sign as a byte array */
@@ -66,14 +71,14 @@ public final class DigitalSignatureDemo {
 			byte[] signatureBytes = sig.sign();
 
 			/* Save the digital signature to a file */
-			FileOutputStream sigFos = new FileOutputStream("signature.sig");
+			FileOutputStream sigFos = new FileOutputStream(SIGNATURE_FILE);
 			sigFos.write(signatureBytes);
 			sigFos.close();
             logger.info("Digital signature saved to: signature.sig");
 
 			/* Save the public key to a file */
 			byte[] key = pub.getEncoded();
-			FileOutputStream keyFos = new FileOutputStream("pubk.key");
+			FileOutputStream keyFos = new FileOutputStream(SIGNATURE_PUBLIC_KEY_FILE);
 			keyFos.write(key);
 			keyFos.close();
 
@@ -86,11 +91,11 @@ public final class DigitalSignatureDemo {
 	}
 
 	/* This method verifies a digital signature */
-	public static void verifyDigitalSignature(String input) {
+	public static void verifyDigitalSignature(final String input) {
 		try {
 
 			/* Retrive the public key from the file system */
-			FileInputStream keyFis = new FileInputStream("pubk.key");
+			FileInputStream keyFis = new FileInputStream(SIGNATURE_PUBLIC_KEY_FILE);
 			byte[] encKey = new byte[keyFis.available()];
 			keyFis.read(encKey);
 			keyFis.close();
@@ -101,7 +106,7 @@ public final class DigitalSignatureDemo {
 			PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
 
 			/* Retrive the digital signature from the file system */
-			FileInputStream sigFis = new FileInputStream("signature.sig");
+			FileInputStream sigFis = new FileInputStream(SIGNATURE_FILE);
 			byte[] sigToVerify = new byte[sigFis.available()];
 			sigFis.read(sigToVerify);
 			sigFis.close();
@@ -125,4 +130,4 @@ public final class DigitalSignatureDemo {
 
 	}
 
-}
+} // THE END...

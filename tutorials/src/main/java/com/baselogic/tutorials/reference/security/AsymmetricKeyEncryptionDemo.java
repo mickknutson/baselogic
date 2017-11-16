@@ -48,14 +48,14 @@ public final class AsymmetricKeyEncryptionDemo {
     }
 
     /* This method performs encryption */
-    public static byte[] encrypt(final String text, final PublicKey publicKey) {
+    public static byte[] encrypt(final PublicKey publicKey, final String text) {
         byte[] cipherText = EncryptionUtilities.encrypt(ALGORITHM, publicKey, text);
 
         return cipherText;
     }
 
     /* This method performs decryption */
-    public static String decrypt(final byte[] text, final PrivateKey privateKey) {
+    public static String decrypt(final PrivateKey privateKey, final byte[] text) {
         String decryptedText = EncryptionUtilities.decrypt(ALGORITHM, privateKey, text);
 
         return decryptedText;

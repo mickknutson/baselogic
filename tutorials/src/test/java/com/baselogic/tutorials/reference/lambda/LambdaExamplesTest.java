@@ -23,7 +23,7 @@ public class LambdaExamplesTest {
     private static final Logger logger = LoggerFactory.getLogger(LambdaExamples.class);
 
     @Test
-    public void testFunctionalInterfaces(){
+    public void test__MathOperation(){
 
         LambdaExamples tester = new LambdaExamples();
 
@@ -39,7 +39,17 @@ public class LambdaExamplesTest {
         //without return statement and without curly braces
         LambdaExamples.MathOperation division = (int a, int b) -> a / b;
 
-        logger.info("10 + 5 = {}", tester.operate(10, 5, addition));
+        LambdaExamples.MathOperation modulus = (int a, int b) -> a % b;
+
+
+        logger.info("***************************** 10 % 6 = {}",
+                tester.operate(10, 6, modulus)
+        );
+        assertThat(tester.operate(10, 6, modulus), is(4));
+
+        logger.info("10 + 5 = {}",
+                tester.operate(10, 5, addition)
+        );
         assertThat(tester.operate(10, 5, addition), is(15));
 
         logger.info("10 - 5 = {}", tester.operate(10, 5, subtraction));
@@ -51,21 +61,10 @@ public class LambdaExamplesTest {
         logger.info("10 / 5 = {}", tester.operate(10, 5, division));
         assertThat(tester.operate(10, 5, division), is(2));
 
-
-        //with parenthesis
-        LambdaExamples.GreetingService greetService1 = message ->
-                logger.info("Hello " + message);
-
-        //without parenthesis
-        LambdaExamples.GreetingService greetService2 = (message) ->
-                logger.info("Hello " + message);
-
-        greetService1.sayMessage("Mick");
-        greetService2.sayMessage("Bob");
     }
 
     @Test
-    public void testGreetingService(){
+    public void test__GreetingService(){
 
         // lambda argument with parenthesis
         LambdaExamples.GreetingService greetService1 = message ->
@@ -80,32 +79,10 @@ public class LambdaExamplesTest {
     }
 
 
-    @Test
-    public void multipleWordsToUppercase() {
-        List<String> input = Arrays.asList("a", "b", "hello");
 
-        List<String> result = LambdaExamples.allToUpperCase(input);
 
-        assertThat(Arrays.asList("A", "B", "HELLO"), is(result));
-    }
 
-    @Test
-    public void twoLetterStringConvertedToUppercaseLambdas() {
-        List<String> input = Arrays.asList("ab");
 
-        List<String> result = LambdaExamples.uppercaseFirstChar(input);
-
-        assertThat(Arrays.asList("Ab"), is(result));
-    }
-
-    @Test
-    public void twoLetterStringConvertedToUppercase() {
-        String input = "ab";
-
-        String result = LambdaExamples.firstToUppercase(input);
-
-        assertThat("Ab", is(result));
-    }
 
 
 

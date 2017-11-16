@@ -81,6 +81,9 @@
     <!--====================================================================-->
     <properties>
         <!-- no overrides yet -->
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+
     </properties>
 
     <profiles>
@@ -160,7 +163,6 @@
      -->
     <reporting>
         <plugins>
-
         </plugins>
     </reporting>
 
@@ -173,7 +175,6 @@
     <!-- REPOSITORIES -->
     <!--================================================================-->
     <repositories>
-
     </repositories>
 
 
@@ -181,7 +182,6 @@
     <!-- PLUGIN REPOSITORIES -->
     <!--================================================================-->
     <pluginRepositories>
-
     </pluginRepositories>
 
 </project>

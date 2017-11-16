@@ -123,7 +123,7 @@ public final class EncryptionUtilities {
      * @param key
      * @return
      */
-    public static byte[] encryptWithUpdate(final String algorithmModePad, final Key key, final String originalText) {
+    public static byte[] encryptWithUpdate(final String algorithmModePad, final Key key, final String ... originalText) {
         byte[] cipherText = null;
 
         try {
@@ -132,9 +132,11 @@ public final class EncryptionUtilities {
 
             logger.info("Original Data: {}", originalText);
 
-            // TODO: Need to get a usecase for cipher.update()
-//            cipherText = cipher.update(originalText.getBytes(ENCODING));
-            cipherText = cipher.doFinal(originalText.getBytes());
+            for(String text: originalText){
+                logger.info("text: {}", text);
+                cipher.update(text.getBytes(ENCODING));
+            }
+            cipherText = cipher.doFinal();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -174,22 +176,26 @@ public final class EncryptionUtilities {
      * @param key
      * @return
      */
-    public static String decryptWithUpdate(final String algorithmModePad, final Key key, final byte[] encryptedText) {
+    public static byte[] decryptWithUpdate(final String algorithmModePad,
+                                           final Key key,
+                                           final byte[] encryptedText) {
         byte[] decryptedText = null;
 
         try {
             final Cipher cipher = Cipher.getInstance(algorithmModePad);
             cipher.init(Cipher.DECRYPT_MODE, key);
 
-//            decryptedText = cipher.update(encryptedText);
-            decryptedText = cipher.doFinal(encryptedText);
+            cipher.update(encryptedText);
+            decryptedText = cipher.doFinal();
 
         } catch (Exception ex) {
             logger.error("decryptWithUpdate exception", ex);
             ex.printStackTrace();
         }
 
-        return new String(decryptedText);
+        logger.info("(a) Decrypted Data: {}", decryptedText);
+
+        return decryptedText;
     }
 
 
@@ -233,13 +239,14 @@ public final class EncryptionUtilities {
                 boolean mkdirsResult = keyFile.getParentFile().mkdirs();
 
                 if(mkdirsResult){
+                    logger.error("'{}'.mkdirs() failed", keyFile.getParentFile().getAbsolutePath());
                     throw new RuntimeException("mkdirs() failed");
                 }
             }
 
             boolean keyFileResult = keyFile.createNewFile();
-            if(! keyFileResult){
-                logger.error("'{}' .createNewFile() failed", fileName);
+            if(keyFileResult){
+                logger.error("'{}'.createNewFile() failed", fileName);
                 throw new RuntimeException("keyFile.createNewFile() failed");
             }
 
@@ -314,12 +321,10 @@ public final class EncryptionUtilities {
      * @param key
      * @param algorithmModePad
      * @param fileName
-     * @param text
      */
     public static String cipherInputStreamFromFile(final Key key,
                                                  final String algorithmModePad,
-                                                 final String fileName,
-                                                 final String text) {
+                                                 final String fileName) {
         StringBuilder sb = new StringBuilder();
 
         try {
@@ -350,6 +355,24 @@ public final class EncryptionUtilities {
     //-----------------------------------------------------------------------//
 
     /**
+     * FIXME: MAKE THIS SIMPLE.
+     *
+     * @param algorithm
+     * @param clearText
+     * @return MessageDigest as a byte[]
+     * @throws NoSuchAlgorithmException
+     */
+    public static byte[] generateMessageDigest(final String algorithm,
+                                               final String clearText)
+            throws NoSuchAlgorithmException {
+
+        MessageDigest md = MessageDigest.getInstance(algorithm);
+        return md.digest(clearText.getBytes());
+    }
+
+
+    /**
+     * FIXME: MAKE THIS SIMPLE.
      *
      * @param algorithm
      * @param clearText
@@ -357,7 +380,7 @@ public final class EncryptionUtilities {
      * @return MessageDigest as a byte[]
      * @throws NoSuchAlgorithmException
      */
-    public static byte[] generateMessageDigest(final String algorithm,
+    public static byte[] generateMessageDigest_OLD(final String algorithm,
                                                final byte[] salt,
                                                final String clearText)
             throws NoSuchAlgorithmException {
@@ -393,13 +416,6 @@ public final class EncryptionUtilities {
         return digest;
     }
 
-
-    public static byte[] generateMessageDigest(final String algorithm,
-                                               final String clearText)
-            throws NoSuchAlgorithmException {
-
-        return generateMessageDigest(algorithm, null, clearText);
-    }
 
     public static String toBase64(byte[] input) {
         return org.apache.commons.codec.binary.Base64.encodeBase64String(input);

@@ -59,7 +59,10 @@ import java.security.GeneralSecurityException;
  * Look into Ciphertext stealing (CTS)
  *
  *
- * Every implementation of the Java platform is required to support the following standard Cipher transformations with the keysizes in parentheses:
+ * Every implementation of the Java platform is required to support the
+ * following standard Cipher transformations with the keysizes in
+ * parentheses:
+ *
  *  AES/CBC/NoPadding (128)
  *  AES/CBC/PKCS5Padding (128)
  *  AES/ECB/NoPadding (128)
@@ -80,8 +83,6 @@ import java.security.GeneralSecurityException;
  *
  */
 public final class EncryptionPaddingDemo {
-
-    private static final Logger logger = LoggerFactory.getLogger(EncryptionPaddingDemo.class);
 
     public static final String ALGORITHM = "AES";
 

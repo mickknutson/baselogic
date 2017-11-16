@@ -5,23 +5,14 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileFilter;
-
-import java.nio.file.Files;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.FileVisitor;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Path;
-import java.nio.file.PathMatcher;
-import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
-
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
 
@@ -36,9 +27,9 @@ import java.util.stream.Collectors;
  *
  *  http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
  */
-public class LambdaExamples {
+public class LambdaFunctionalInterfaceExamples {
 
-    private static final Logger logger = LoggerFactory.getLogger(LambdaExamples.class);
+    private static final Logger logger = LoggerFactory.getLogger(LambdaFunctionalInterfaceExamples.class);
 
     @FunctionalInterface
     interface MathOperation {
@@ -51,6 +42,11 @@ public class LambdaExamples {
     }
 
 
+    @FunctionalInterface
+    interface Lister {
+        int sort(int a, int b);
+    }
+
 
 
     public int operate(int a, int b, MathOperation mathOperation){
@@ -58,16 +54,11 @@ public class LambdaExamples {
     }
 
 
-    /**
-     * this::print
-     * LambdaExamples::print
-     */
-    public void print(String message) {
-        logger.info("--> {}", message);
-    }
+    //with type declaration
+    LambdaFunctionalInterfaceExamples.MathOperation addition = (int a, int b) -> a + b;
+
 
     /**
-     * TODO: Need to separate into individual methods
      * More examples
      * @throws Exception
      */
@@ -81,6 +72,7 @@ public class LambdaExamples {
         //-------------------------------------------------------------------//
         // Target type #2: assignment
 
+
         Runnable r2 = () -> logger.info("running");
         r2.run();
 
@@ -90,7 +82,6 @@ public class LambdaExamples {
         File[] files = new File(".").listFiles(getFilter("txt"));
         for (File file: files)
             logger.info(file.toString());
-
 
         //-------------------------------------------------------------------//
         // Target type #4: array initializer
@@ -142,7 +133,7 @@ public class LambdaExamples {
         Comparator<String> compare;
 
         compare = (ascendingSort) ? (s1, s2) -> s1.compareTo(s2)
-                                  : (s1, s2) -> s2.compareTo(s1);
+                : (s1, s2) -> s2.compareTo(s1);
 
         List<String> cities = Arrays.asList(
                 "Washington", "London", "Rome", "Berlin", "Jerusalem",
@@ -150,7 +141,6 @@ public class LambdaExamples {
         Collections.sort(cities, compare);
 
         cities.forEach(logger::info);
-//         Long form:
 //        for (String city: cities)
 //            logger.info(city);
 

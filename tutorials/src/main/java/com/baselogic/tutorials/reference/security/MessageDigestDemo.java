@@ -28,6 +28,12 @@ import java.util.Date;
  * Published in 1995, SHA-1 is very similar to SHA-0, but alters the original
  * SHA hash specification to correct alleged weaknesses. SHA-2, published in 2001,
  * is significantly different from the SHA-1 hash function.
+ *
+ * TODO: Need to add the following into the Message Digest:
+ * TODO: MAC
+ * TODO: UMAC
+ * TODO: CMAC
+
  */
 public final class MessageDigestDemo {
 
@@ -74,18 +80,24 @@ public final class MessageDigestDemo {
                                                final Date date)
             throws NoSuchAlgorithmException {
 
-        String temp = salt + date.getTime() + clearText;
+        byte[] digest = EncryptionUtilities.generateMessageDigest(algorithm, clearText);
 
-        try {
-            MessageDigest md = MessageDigest.getInstance(algorithm);
+        // to hex:
+//        return enc(digest, hex);
+        return toBase64(digest);
 
-            byte[] digest = md.digest(temp.getBytes());
-
-//            return enc(digest, base64);
-            return toBase64(digest);
-        } catch (NoSuchAlgorithmException e) {
-            throw e;
-        }
+//        String temp = salt + date.getTime() + clearText;
+//
+//        try {
+//            MessageDigest md = MessageDigest.getInstance(algorithm);
+//
+//            byte[] digest = md.digest(temp.getBytes());
+//
+////            return enc(digest, base64);
+//            return toBase64(digest);
+//        } catch (NoSuchAlgorithmException e) {
+//            throw e;
+//        }
     }
 
 
@@ -94,7 +106,7 @@ public final class MessageDigestDemo {
                                                 final String clearText)
             throws NoSuchAlgorithmException {
 
-        byte[] digest = EncryptionUtilities.generateMessageDigest(algorithm, salt.getBytes(), clearText);
+        byte[] digest = EncryptionUtilities.generateMessageDigest(algorithm, clearText);
 
         // to hex:
 //        return enc(digest, hex);
